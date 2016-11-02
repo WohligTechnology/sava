@@ -1,0 +1,55 @@
+{
+    "title": "Create BlogLikes",
+    "name": "BlogLikes",
+    "jsonPage": "viewBlogLikes",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["newBlogLikes"],
+    "fields": [{
+        "name": "Blog",
+        "type": "selectFromTable",
+        "tableRef": "blog",
+        "searchApi": "searchCall",
+        "placeholder": "Enter blog",
+        "id": "blog",
+        "validation": ["", "trim", ""],
+        "url": "blog/search"
+    }, {
+        "name": "Athlete",
+        "type": "selectFromTable",
+        "tableRef": "athlete",
+        "searchApi": "searchCall",
+        "placeholder": "Enter athlete",
+        "id": "athlete",
+        "validation": ["", "trim", ""],
+        "url": "athlete/search"
+    }, {
+        "name": "Type",
+        "type": "tags",
+        "tableRef": "type",
+        "placeholder": "Enter type",
+        "id": "type",
+        "validation": ["", "trim", ""],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "dropDown": ["Like", "Dislike"]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitBlogLikes",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewBlogLikes"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": "page({id:'viewBlogLikes'})"
+    }],
+    "apiCall": {
+        "url": "BlogLikes/save"
+    }
+}

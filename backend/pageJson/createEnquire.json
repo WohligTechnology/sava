@@ -1,0 +1,104 @@
+{
+
+  "title": "Create Enquire",
+  "name": "Enquire",
+  "jsonPage": "viewEnquire",
+  "desciption": "",
+  "pageType": "create",
+  "urlFields": ["Enquire"],
+    "fields": [{
+        "name": "Cities",
+        "type": "text",
+        "tableRef": "cities",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Activities",
+        "type": "text",
+        "tableRef": "activities",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "No Of People",
+        "type": "text",
+        "tableRef": "size",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "From",
+        "type": "date",
+        "tableRef": "from",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "To",
+        "type": "date",
+        "tableRef": "to",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Comment",
+        "type": "textarea",
+        "tableRef": "comment",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Phone",
+        "type": "text",
+        "tableRef": "phone",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Email",
+        "type": "text",
+        "tableRef": "email",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitWhatsHot",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewEnquire"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewEnquire"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Enquire/save"
+    }
+}

@@ -1,0 +1,66 @@
+{
+    "title": "What's Hot Slider",
+    "description": "List of What's Hot",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Url",
+        "isSort": "",
+        "tableRef": "url"
+    },{
+        "name": "Banner",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "banner"
+    },{
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
+    }],
+    "action": [{
+          "name": "edit",
+          "icon": "fa-pencil",
+          "buttonClass": "btn-primary",
+          "type": "page",
+          "action": "editWhatsHotSlider",
+          "fieldsToSend": {
+              "_id": "_id"
+          }
+      },{
+          "name": "delete",
+          "icon": "fa-trash",
+          "buttonClass": "btn-danger",
+          "type": "apiCallConfirm",
+          "title": "Delete WhatsHotSlider",
+          "content": "Are you sure you want to delete WhatsHotSlider?",
+          "api": "WhatsHotSlider/delete",
+          "fieldsToSend": {
+              "name": "_id",
+              "value": "_id"
+          }
+      }],
+      "button": [{
+          "name": "Excel Export",
+          "icon": "print",
+          "class": "btn-danger",
+          "type": "redirect",
+          "action": "excelexport"
+      }, {
+          "name": "Upload Excel",
+          "icon": "delete",
+          "class": "btn-warning",
+          "type": "redirect",
+          "action": "uploadcsv"
+      }, {
+          "name": "Create",
+          "icon": "plus",
+          "class": "btn-success",
+          "type": "page",
+          "action": "createWhatsHotSlider"
+      }],
+    "apiCall": {
+        "url": "WhatsHotSlider/search",
+        "params": ""
+    }
+}

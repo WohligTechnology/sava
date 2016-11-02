@@ -1,0 +1,66 @@
+{
+    "title": "Edit Banner",
+    "jsonPage": "viewBanner",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "name":"Banner",
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter Banner Name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Banner",
+        "type": "image",
+        "tableRef": "banner",
+        "option": "single",
+        "size":"1559 X 586",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Status",
+        "type": "tags",
+        "tableRef": "status",
+        "placeholder": "Enter status",
+        "id": "status",
+        "validation": ["", "trim", ""],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "onView": true,
+        "dropDown": ["true", "false"]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitBanner",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewBanner"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewBanner"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Banner/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "Banner/getOne",
+        "params": "_id"
+    }
+}

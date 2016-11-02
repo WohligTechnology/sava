@@ -1,0 +1,70 @@
+{
+  "title": "Create DestinationTitle",
+    "name": "DestinationTitle",
+    "jsonPage": "viewDestinationTitle",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["DestinationTitle"],
+    "fields": [{
+        "name": "Title",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Thumbnail",
+        "type": "image",
+        "option":"single",
+        "size": "50 X 50",
+        "tableRef": "thumbnail",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Destination",
+        "type": "selectFromTable",
+        "dropDownType":"single",
+        "searchApi":"searchCall",
+        "tableRef": "destination",
+        "placeholder": "Enter Category-Name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": "Destination/search"
+    },{
+        "name": "Status",
+        "type": "tags",
+        "tableRef": "status",
+        "placeholder": "Enter status",
+        "id": "status",
+        "validation": ["", "trim", ""],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "dropDown": ["true", "false"]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitWhatsHot",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewDestinationTitle"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewDestinationTitle"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "DestinationTitle/save"
+    }
+}

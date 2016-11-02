@@ -1,0 +1,131 @@
+{
+    "title": "Create User",
+    "name": "User",
+    "jsonPage": "viewUser",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["newuser"],
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter Name",
+        "id": "name",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Product",
+        "type": "box",
+        "tableRef": "product",
+        "validation": ["", "trim", ""],
+        "field": [{
+            "name": "Name",
+            "type": "text",
+            "tableRef": "name",
+            "placeholder": "Enter Name",
+            "id": "name",
+            "validation": ["", "trim", ""],
+            "url": "",
+            "onView": true
+        }, {
+            "name": "Mobile Number",
+            "type": "text",
+            "tableRef": "mobile",
+            "placeholder": "Enter Mobile",
+            "id": "name",
+            "validation": ["", "trim", ""],
+            "url": "",
+            "onView": true
+        }]
+    }, {
+        "name": "Hobbies",
+        "type": "tags",
+        "tableRef": "hobbies",
+        "placeholder": "Enter Hobbies",
+        "id": "hobbies",
+        "validation": ["", "trim", ""],
+        "url": "user/search",
+        "dropDownField": "name",
+        "fieldType": "",
+        "dropDownType": "multiple",
+        "dropDown": [{
+            "name": "mahesh"
+        }, {
+            "name": "sohan"
+        }]
+    }, {
+        "name": "User",
+        "type": "text",
+        "tableRef": "user",
+        "searchApi": "searchCall",
+        "placeholder": "Enter User",
+        "id": "user",
+        "validation": ["", "trim", ""],
+        "url": "user/search"
+    }, {
+        "name": "Email",
+        "type": "text",
+        "tableRef": "email",
+        "placeholder": "Enter Email",
+        "id": "email",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Photo",
+        "type": "image",
+        "tableRef": "photo",
+        "placeholder": "Upload photo",
+        "id": "photo",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Password",
+        "type": "password",
+        "tableRef": "password",
+        "placeholder": "Enter password",
+        "id": "password",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Forgot Password",
+        "type": "password",
+        "tableRef": "forgotPassword",
+        "placeholder": "Enter forgot password",
+        "id": "forgotPassword",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Mobile",
+        "type": "text",
+        "tableRef": "mobile",
+        "placeholder": "Enter mobile",
+        "id": "mobile",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "OTP",
+        "type": "wysiwyg",
+        "tableRef": "otp",
+        "placeholder": "Enter Otp",
+        "id": "otp",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitUser",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewUser"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": "page({id:'viewUser'})"
+    }],
+    "apiCall": {
+        "url": "User/save"
+    }
+}

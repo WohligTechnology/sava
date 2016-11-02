@@ -1,0 +1,156 @@
+{
+    "title": "Edit Package",
+    "name": "Package",
+    "jsonPage": "viewPackage",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Banner",
+        "type": "image",
+        "tableRef": "banner",
+        "option": "single",
+        "size": "1632 X 562",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Image",
+        "type": "image",
+        "tableRef": "image",
+        "option": "single",
+        "size": "545 x 413",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Title 1",
+        "type": "text",
+        "tableRef": "title1",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Title 2",
+        "type": "text",
+        "tableRef": "title2",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Duration",
+        "type": "text",
+        "tableRef": "duration",
+        "placeholder": "Enter Duration",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Price",
+        "type": "text",
+        "tableRef": "price",
+        "placeholder": "Enter Price",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Destination",
+        "type": "tags",
+        "dropDownType":"multiple",
+        "tableRef": "destination",
+        "dropDownField":"name",
+        "placeholder": "Enter Category-Name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": "Destination/search"
+    },{
+        "name": "Status",
+        "type": "tags",
+        "tableRef": "status",
+        "placeholder": "Enter status",
+        "id": "status",
+        "validation": ["", "trim", ""],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "onView": true,
+        "dropDown": ["true", "false"]
+    } , {
+        "name": "Package Details",
+        "type": "box",
+        "tableRef": "pack",
+        "validation": ["", "trim", ""],
+        "fields": [{
+            "name": "Image",
+            "type": "image",
+            "tableRef": "image",
+            "option": "single",
+            "size": "width = 413",
+            "placeholder": "Enter Image",
+            "id": "input1",
+            "onView": true,
+            "validation": ["", "trim", ""],
+            "url": ""
+        },{
+            "name": "Day",
+            "type": "text",
+            "tableRef": "day",
+            "placeholder": "Enter name",
+            "id": "input1",
+            "onView": true,
+            "validation": ["", "trim", ""],
+            "url": ""
+        },{
+            "name": "Description",
+            "type": "wysiwyg",
+            "tableRef": "description",
+            "placeholder": "Enter Description",
+            "id": "input1",
+            "validation": ["", "trim", ""],
+            "url": ""
+        },{
+            "name": "Status",
+            "type": "tags",
+            "tableRef": "status",
+            "placeholder": "Enter status",
+            "id": "status",
+            "validation": ["", "trim", ""],
+            "url": "",
+            "dropDownField": "",
+            "dropDownType": "single",
+            "onView": true,
+            "dropDown": ["true", "false"]
+        }]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitPackage",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewPackage"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewPackage"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Package/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "Package/getOne",
+        "params": "_id"
+    }
+}

@@ -1,0 +1,139 @@
+{
+  "title": "Create Activities",
+  "name": "Activities",
+  "jsonPage": "viewActivities",
+  "desciption": "",
+  "pageType": "create",
+  "urlFields": ["Activities"],
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Activity Description",
+        "type": "wysiwyg",
+        "tableRef": "description",
+        "placeholder": "Enter Description",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Small Image",
+        "type": "image",
+        "option": "single",
+        "size": "545 x 413",
+        "tableRef": "image1",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Big Image",
+        "type": "image",
+        "option": "single",
+        "size": "1297 x 641",
+        "tableRef": "image2",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Order",
+        "type": "text",
+        "tableRef": "order",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "HomePage Image",
+        "type": "image",
+        "size": "545 x 413",
+        "option": "single",
+        "tableRef": "image3",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Category-Name",
+        "type": "tags",
+        "tableRef": "type",
+        "placeholder": "Enter Type",
+        "id": "status",
+        "validation": ["", "trim", ""],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "dropDown": ["day", "night"]
+    },{
+        "name": "Type",
+        "type": "tags",
+        "tableRef": "popular",
+        "placeholder": "Enter Type",
+        "id": "status",
+        "validation": ["", "trim", ""],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "dropDown": ["None", "Popular Attraction"]
+    },{
+        "name": "On HomePage",
+        "type": "tags",
+        "tableRef": "isSlider",
+        "placeholder": "Enter isSlider",
+        "id": "status",
+        "validation": ["", "trim", ""],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "dropDown": ["Yes", "No"]
+    }, {
+        "name": "Destination",
+        "type": "selectFromTable",
+        "dropDownType":"single",
+        "searchApi":"searchCall",
+        "tableRef": "destination",
+        "placeholder": "Enter Category-Name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": "Destination/search"
+    }, {
+        "name": "Status",
+        "type": "tags",
+        "tableRef": "status",
+        "placeholder": "Enter status",
+        "id": "status",
+        "validation": ["", "trim", ""],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "dropDown": ["true", "false"]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitActivities",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewActivities"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewActivities"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Activities/save"
+    }
+}

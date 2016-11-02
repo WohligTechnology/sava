@@ -1,0 +1,40 @@
+{
+  "title": "Create Media",
+  "name": "Media",
+  "jsonPage": "viewMedia",
+  "desciption": "",
+  "pageType": "create",
+  "urlFields": ["Media"],
+  "fields": [{
+    "name": "Image",
+    "type": "image",
+    "tableRef": "image",
+    "option": "single",
+    "placeholder": "Enter Image",
+    "id": "input1",
+    "validation": ["", "trim", ""],
+    "url": ""
+  }],
+  "action": [{
+    "name": "submit",
+    "action": "submitMedia",
+    "stateName": {
+      "page": "page",
+      "json": {
+        "id": "viewMedia"
+      }
+    }
+  }, {
+    "name": "cancel",
+    "sideMenuRedirect": true,
+    "stateName": {
+      "page": "page",
+      "json": {
+        "id": "viewMedia"
+      }
+    }
+  }],
+  "apiCall": {
+    "url": "Media/savedata"
+  }
+}

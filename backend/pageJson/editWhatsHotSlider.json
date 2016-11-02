@@ -1,0 +1,66 @@
+{
+    "title": "Edit What'sHot",
+    "name": "WhatsHotSlider",
+    "jsonPage": "viewWhatsHotSlider",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Url",
+        "type": "text",
+        "tableRef": "url",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Banner",
+        "type": "image",
+        "tableRef": "banner",
+        "option": "single",
+        "size": "1559 X 586",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Status",
+        "type": "tags",
+        "tableRef": "status",
+        "placeholder": "Enter status",
+        "id": "status",
+        "validation": ["", "trim", ""],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "onView": true,
+        "dropDown": ["true", "false"]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitWhatsNew",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewWhatsHotSlider"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewWhatsHotSlider"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "WhatsHotSlider/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "WhatsHotSlider/getOne",
+        "params": "_id"
+    }
+}

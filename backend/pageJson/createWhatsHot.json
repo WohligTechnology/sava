@@ -1,0 +1,178 @@
+{
+    "title": "Create WhatsHot",
+    "name": "WhatsHot",
+    "jsonPage": "viewWhatsHot",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["WhatsHot"],
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter Name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Banner",
+        "type": "image",
+        "tableRef": "banner",
+        "option": "single",
+        "size": "1632 × 562",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Image",
+        "type": "image",
+        "tableRef": "image",
+        "option": "single",
+        "size": "929 × 450",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Table Image",
+        "type": "image",
+        "tableRef": "tableImage",
+        "option": "single",
+        "size": "900 x 500",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Cruise Rate",
+        "type": "wysiwyg",
+        "tableRef": "cruiserate",
+        "placeholder": "Enter Cruise Rate",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "From Date",
+        "type": "date",
+        "tableRef": "fromDate",
+        "placeholder": "Enter fromDate",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "To Date",
+        "type": "date",
+        "tableRef": "toDate",
+        "placeholder": "Enter toDate",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Location",
+        "type": "text",
+        "tableRef": "location",
+        "placeholder": "Enter location",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Status",
+        "type": "tags",
+        "tableRef": "status",
+        "placeholder": "Enter status",
+        "id": "status",
+        "validation": ["", "trim", ""],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "onView": true,
+        "dropDown": ["true", "false"]
+    }, {
+        "name": "IMAGES",
+        "type": "box",
+        "tableRef": "images",
+        "validation": ["", "trim", ""],
+        "fields": [{
+            "name": "Image",
+            "type": "image",
+            "tableRef": "image",
+            "option": "single",
+            "size": "1920 X 1080",
+            "placeholder": "Enter Image",
+            "id": "input1",
+            "validation": ["", "trim", ""],
+            "url": ""
+        },{
+            "name": "Status",
+            "type": "tags",
+            "tableRef": "status",
+            "placeholder": "Enter status",
+            "id": "status",
+            "validation": ["", "trim", ""],
+            "url": "",
+            "dropDownField": "",
+            "dropDownType": "single",
+            "onView": true,
+            "dropDown": ["true", "false"]
+        }]
+    }, {
+        "name": "VIDEOS",
+        "type": "box",
+        "tableRef": "videos",
+        "validation": ["", "trim", ""],
+        "fields": [{
+            "name": "URL",
+            "type": "text",
+            "tableRef": "url",
+            "placeholder": "Enter URL",
+            "id": "input1",
+            "validation": ["", "trim", ""],
+            "url": ""
+        },{
+            "name": "Thumbnail",
+            "type": "image",
+            "option":"single",
+            "size": "351 X 239",
+            "tableRef": "thumbnail",
+            "placeholder": "Enter Thumbnail Image",
+            "id": "input1",
+            "validation": ["", "trim", ""],
+            "url": ""
+        },{
+            "name": "Status",
+            "type": "tags",
+            "tableRef": "status",
+            "placeholder": "Enter status",
+            "id": "status",
+            "validation": ["", "trim", ""],
+            "url": "",
+            "dropDownField": "",
+            "dropDownType": "single",
+            "onView": true,
+            "dropDown": ["true", "false"]
+        }]
+    }],
+
+    "action": [{
+        "name": "submit",
+        "action": "submitWhatsHot",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewWhatsHot"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewWhatsHot"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "WhatsHot/save"
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "title": "Create Subscribe",
+    "name": "Subscribe",
+    "jsonPage": "viewSubscribe",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["Subscribe"],
+    "fields": [{
+        "name": "Email",
+        "type": "text",
+        "tableRef": "email",
+        "placeholder": "Enter Email",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "Subscribe",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewSubscribe"
+            }
+        }
+    },{
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewSubscribe"
+            }
+        }
+    }],
+
+    "apiCall": {
+        "url": "Subscribe/save"
+    }
+}

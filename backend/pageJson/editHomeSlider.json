@@ -1,0 +1,75 @@
+{
+    "title": "Edit HomeSlider",
+    "jsonPage": "viewHomeSlider",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Image",
+        "type": "image",
+        "tableRef": "image",
+        "option": "single",
+        "size": "1920 x 670",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Mobile Image",
+        "type": "image",
+        "tableRef": "image2",
+        "option": "single",
+        "size": "705 x 1087px",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "URL",
+        "type": "text",
+        "tableRef": "url",
+        "placeholder": "Enter URL",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Status",
+        "type": "tags",
+        "tableRef": "status",
+        "placeholder": "Enter status",
+        "id": "status",
+        "validation": ["", "trim", ""],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "onView": true,
+        "dropDown": ["true", "false"]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitHomeSlider",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewHomeSlider"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewHomeSlider"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "HomeSlider/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "HomeSlider/getOne",
+        "params": "_id"
+    }
+  }
