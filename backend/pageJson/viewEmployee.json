@@ -1,0 +1,49 @@
+{
+    "title": "Employee",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [{
+        "name": "Image",
+        "isSort": "",
+        "tableRef": "image",
+        "type": "image"
+    }, {
+        "name": "First Name",
+        "isSort": "",
+        "tableRef": "firstName"
+    }, {
+        "name": "Last Name",
+        "isSort": "",
+        "tableRef": "lastName"
+    }, {
+        "name": "Email",
+        "isSort": "",
+        "tableRef": "email"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editEmployee",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "Employee/getOne"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Tag",
+        "content": "Are you sure you want to delete User?",
+        "api": "Employee/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "Employee/search",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createEmployee'})"
+}

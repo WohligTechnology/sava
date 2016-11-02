@@ -1,0 +1,49 @@
+{
+    "title": "Create Loyalty",
+    "jsonPage": "viewLoyalty",
+    "desciption": "",
+    "pageType": "create",
+    "fields": [{
+        "name": "Buisness Programme",
+        "type": "text",
+        "tableRef": "buisnessProgramme",
+        "placeholder": "Enter Buisness Programme",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "To Issue",
+        "type": "select",
+        "option":"single",
+        "tableRef": "toIssue",
+        "placeholder": "Enter to issue",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": "Points",
+            "name": "Points"
+        }, {
+            "value": "Stamps",
+            "name": "Stamps"
+        }]
+    }, {
+        "name": "Total reward",
+        "type": "text",
+        "tableRef": "totalReward",
+        "placeholder": "Enter total reward",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitLoyalty"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewLoyalty'})"
+    }],
+
+    "apiCall": {
+        "url": "Loyalty/save"
+    }
+}

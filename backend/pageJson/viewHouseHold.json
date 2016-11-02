@@ -1,0 +1,57 @@
+{
+    "title": "View HouseHold",
+    "desciption": "",
+    "sendIdWithCreate": true,
+    "pageType": "view",
+    "fields": [{
+        "name": "Relation With You",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "name"
+    },{
+        "name": "Age",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "age"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editHouseHold",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "User/getOneHouseHold"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete HouseHold",
+        "content": "Are you sure you want to delete HouseHold?",
+        "api": "User/deleteHouseHold",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "User/getHouseHold",
+        "params": "_id"
+    },
+    "createButtonState": "page({jsonName:'createHouseHold'})",
+    "sidemenu": [{
+          "name": "User",
+          "action": "sidemenuRedirect",
+          "jsonPage": "editUser",
+          "fieldsToSend": [1],
+          "callFindOne": "User/getOne"
+      }, {
+          "name": "House Hold",
+          "action": "sidemenuRedirect",
+          "jsonPage": "viewHouseHold",
+          "fieldsToSend": [1],
+          "callFindOne": "User/getHouseHold"
+      }]
+
+}

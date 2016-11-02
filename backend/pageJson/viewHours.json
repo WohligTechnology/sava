@@ -1,0 +1,43 @@
+{
+    "title": "View Hours",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [{
+        "name": "Branch Name",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "branchName.branchName"
+    },{
+        "name": "Day",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "name"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editHours",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "BranchHours/getOne"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Hours",
+        "content": "Are you sure you want to delete Hours?",
+        "api": "BranchHours/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "BranchHours/search",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createHours'})"
+
+}

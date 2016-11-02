@@ -1,0 +1,35 @@
+{
+    "title": "Create Time",
+    "jsonPage": "viewTime",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["BranchHours"],
+    "fields": [{
+        "name": "From",
+        "type": "text",
+        "tableRef": "from",
+        "placeholder": "Enter Hotel Name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+          "name": "To",
+          "type": "text",
+          "tableRef": "to",
+          "placeholder": "Enter Hotel Name",
+          "id": "input1",
+          "validation": ["required", "trim", "unique"],
+          "url": ""
+      }],
+    "action": [{
+        "name": "submit",
+        "action": "submitTime"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewTime'})"
+    }],
+
+    "apiCall": {
+        "url": "BranchHours/saveTime"
+    }
+}

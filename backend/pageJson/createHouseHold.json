@@ -1,0 +1,35 @@
+{
+    "title": "Create HouseHold",
+    "jsonPage": "viewHouseHold",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["User"],
+    "fields": [{
+        "name": "Relation",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter Relation",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Age",
+        "type": "number",
+        "tableRef": "age",
+        "placeholder": "Enter Age",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitHouseHold"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewHouseHold'})"
+    }],
+
+    "apiCall": {
+        "url": "User/saveHouseHold"
+    }
+}

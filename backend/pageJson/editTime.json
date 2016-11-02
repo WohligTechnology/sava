@@ -1,0 +1,69 @@
+{
+    "title": "Edit Time",
+    "jsonPage": "viewTime",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Id",
+        "type": "hidden",
+        "tableRef": "_id",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "_id"
+    },{
+        "name": "From",
+        "type": "text",
+        "tableRef": "from",
+        "placeholder": "Enter Day",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "from"
+    },{
+        "name": "TO",
+        "type": "text",
+        "tableRef": "to",
+        "placeholder": "Enter TO",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "to"
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitOneTime"
+    }, {
+        "name": "cancel"
+    }],
+    "apiCall": {
+        "url": "BranchHours/saveTime",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "BranchHours/getOneTime",
+        "params": "_id"
+    },
+    "createButtonState": "page({jsonName:'createHours'})",
+    "sidemenu": [{
+          "name": "BranchRegistration",
+          "action": "sidemenuRedirect",
+          "jsonPage": "editBranchRegistration",
+          "fieldsToSend": [1],
+          "callFindOne": "BranchRegistration/getOne"
+      }, {
+          "name": "Hours",
+          "action": "sidemenuRedirect",
+          "jsonPage": "viewHours",
+          "fieldsToSend": [1],
+          "callFindOne": "BranchRegistration/getHours"
+      }, {
+          "name": "Time",
+          "action": "sidemenuRedirect",
+          "jsonPage": "viewTime",
+          "fieldsToSend": [1],
+          "callFindOne": "BranchRegistration/getTime"
+      }]
+}

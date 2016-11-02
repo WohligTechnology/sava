@@ -1,0 +1,49 @@
+{
+    "title": "Offer",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [{
+        "name": "Offer type",
+        "isSort": "",
+        "tableRef": "offerType"
+    }, {
+        "name": "Programm name",
+        "isSort": "",
+        "tableRef": "loyaltyProgramName"
+    }, {
+        "name": "Points/Stamps",
+        "isSort": "",
+        "tableRef": "pointsStamps"
+    }, {
+        "name": "Promo image",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "promoImage"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editOffer",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "Offer/getOne"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Tag",
+        "content": "Are you sure you want to delete User?",
+        "api": "Offer/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "Offer/search",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createOffer'})"
+}

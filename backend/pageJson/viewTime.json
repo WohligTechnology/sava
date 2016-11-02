@@ -1,0 +1,57 @@
+{
+    "title": "View Time",
+    "desciption": "",
+    "sendIdWithCreate": true,
+    "pageType": "view",
+    "fields": [{
+        "name": "From",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "from"
+    },{
+        "name": "To",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "to"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editTime",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "BranchHours/getOneTime"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Time",
+        "content": "Are you sure you want to delete Time?",
+        "api": "BranchHours/deleteTime",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "BranchHours/getTime",
+        "params": "_id"
+    },
+    "createButtonState": "page({jsonName:'createTime'})",
+    "sidemenu": [ {
+          "name": "Hours",
+          "action": "sidemenuRedirect",
+          "jsonPage": "viewHours",
+          "fieldsToSend": [1],
+          "callFindOne": "BranchHours/getOne"
+      },{
+        "name": "Time",
+        "action": "sidemenuRedirect",
+        "jsonPage": "viewTime",
+        "fieldsToSend": [1],
+        "callFindOne": "BranchHours/getTime"
+        }]
+
+}

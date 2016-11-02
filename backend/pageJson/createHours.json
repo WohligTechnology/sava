@@ -1,0 +1,37 @@
+{
+    "title": "Create Hours",
+    "jsonPage": "viewHours",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["BranchHours"],
+    "fields": [{
+          "name": "Branch Name",
+          "type": "selectFromTable",
+          "option":"single",
+          "dropDownName": "branchName",
+          "tableRef": "branchName",
+          "placeholder": "Select branch",
+          "id": "input4",
+          "validation": ["required", "trim", "unique"],
+          "url": "BranchRegistration/search"
+      },{
+          "name": "Day Name",
+          "type": "text",
+          "tableRef": "name",
+          "placeholder": "Enter Day",
+          "id": "input1",
+          "validation": ["required", "trim", "unique"],
+          "url": ""
+      }],
+    "action": [{
+        "name": "submit",
+        "action": "submitHours"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewHours'})"
+    }],
+
+    "apiCall": {
+        "url": "BranchHours/save"
+    }
+}

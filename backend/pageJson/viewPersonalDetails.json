@@ -1,0 +1,49 @@
+{
+    "title": "PersonalDetails",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [{
+        "name": "Image",
+        "isSort": "",
+        "tableRef": "image",
+        "type": "image"
+    }, {
+        "name": "Title",
+        "isSort": "",
+        "tableRef": "title"
+    }, {
+        "name": "First name",
+        "isSort": "",
+        "tableRef": "firstName"
+    }, {
+        "name": "Last name",
+        "isSort": "",
+        "tableRef": "lastName"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editPersonalDetails",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "PersonalDetails/getOne"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Tag",
+        "content": "Are you sure you want to delete User?",
+        "api": "PersonalDetails/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "PersonalDetails/search",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createPersonalDetails'})"
+}

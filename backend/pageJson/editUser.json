@@ -1,80 +1,200 @@
 {
     "title": "Edit User",
-    "name": "User",
     "jsonPage": "viewUser",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],
     "fields": [{
-        "name": "Name",
+        "name": "Id",
+        "type": "hidden",
+        "tableRef": "_id",
+        "placeholder": "Id",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "_id"
+    },{
+        "name": "Full Name",
         "type": "text",
         "tableRef": "name",
         "placeholder": "Enter Name",
-        "id": "name",
-        "validation": ["", "trim", ""],
-        "url": ""
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "name"
     }, {
         "name": "Email",
-        "type": "text",
+        "type": "email",
         "tableRef": "email",
         "placeholder": "Enter Email",
-        "id": "email",
-        "validation": ["", "trim", ""],
-        "url": ""
-    }, {
-        "name": "Photo",
-        "type": "image",
-        "tableRef": "photo",
-        "placeholder": "Upload photo",
-        "id": "photo",
-        "validation": ["", "trim", ""],
-        "url": ""
-    }, {
-        "name": "Password",
-        "type": "password",
-        "tableRef": "password",
-        "placeholder": "Enter password",
-        "id": "password",
-        "validation": ["", "trim", ""],
-        "url": ""
-    }, {
-        "name": "Forgot Password",
-        "type": "password",
-        "tableRef": "forgotPassword",
-        "placeholder": "Enter forgot password",
-        "id": "forgotPassword",
-        "validation": ["", "trim", ""],
-        "url": ""
-    }, {
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "email"
+    },{
         "name": "Mobile",
-        "type": "text",
+        "type": "number",
         "tableRef": "mobile",
-        "placeholder": "Enter mobile",
-        "id": "mobile",
-        "validation": ["", "trim", ""],
-        "url": ""
-    }, {
-        "name": "OTP",
-        "type": "wysiwyg",
-        "tableRef": "otp",
-        "placeholder": "Enter Otp",
-        "id": "otp",
-        "validation": ["", "trim", ""],
-        "url": ""
+        "placeholder": "Enter Mobile No",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "mobile"
+    },{
+        "name": "Gender",
+        "type": "select",
+        "option":"single",
+        "tableRef": "gender",
+        "placeholder": "Select Gender",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value" : "Male",
+            "name" : "Male"
+        },{
+            "value" : "Female",
+            "name" : "Female"
+        },{
+            "value" : "Other",
+            "name" : "Other"
+        }],
+        "model": "gender"
+    },{
+        "name": "DOB",
+        "type": "date",
+        "tableRef": "dob",
+        "placeholder": "Enter Date of birth",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "dob"
+    },{
+        "name": "Address1",
+        "type": "text",
+        "tableRef": "address1",
+        "placeholder": "Enter Address1",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "address1"
+    },{
+        "name": "Address2",
+        "type": "text",
+        "tableRef": "address2",
+        "placeholder": "Enter Address2",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "address2"
+    },{
+        "name": "Town",
+        "type": "text",
+        "tableRef": "town",
+        "placeholder": "Enter Town",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "town"
+    },{
+        "name": "City",
+        "type": "text",
+        "tableRef": "city",
+        "placeholder": "Enter City",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "city"
+    },{
+        "name": "Pincode",
+        "type": "Number",
+        "tableRef": "pincode",
+        "placeholder": "Enter Pincode",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "pincode"
+    },{
+        "name": "Country",
+        "type": "text",
+        "tableRef": "country",
+        "placeholder": "Enter Country",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "country"
+    },{
+        "name": "Latitude",
+        "type": "latLong",
+        "tableRef": "lat",
+        "placeholder": "Enter Latitude",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "lat"
+    },{
+        "name": "Longitude",
+        "type": "latLong",
+        "tableRef": "lng",
+        "placeholder": "Enter Longitude",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "lng"
+    },{
+      "name": "Dietary Needs",
+      "type": "chips",
+      "tableRef": "dietaryNeeds",
+      "placeholder": "Enter Dietary Needs",
+      "id": "input4",
+      "validation": ["required", "trim", "unique"],
+      "url": "",
+      "model": "dietaryNeeds"
+    },{
+        "name": "Annual Income",
+        "type": "text",
+        "tableRef": "annualIncome",
+        "placeholder": "Enter Annual Income",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "annualIncome"
+    },{
+        "name": "facebook",
+        "type": "text",
+        "tableRef": "facebookID",
+        "placeholder": "Enter facebookID",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "facebookID"
+    },{
+        "name": "Google",
+        "type": "text",
+        "tableRef": "googleID",
+        "placeholder": "Enter GoogleID",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "googleID"
+    },{
+        "name": "Favourite branch",
+        "type": "selectFromTable",
+        "option":"multiple",
+        "dropDownName": "branchName",
+        "tableRef": "favBranch",
+        "placeholder": "Select favourite branch",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "BranchRegistration/search",
+        "model": "favBranch"
     }],
     "action": [{
         "name": "submit",
-        "action": "submitUser",
-        "stateName": {
-            "page": "page",
-            "json": {
-                "id": "viewUser"
-            }
-        }
+        "action": "submitUser"
     }, {
         "name": "cancel",
-        "sideMenuRedirect": true,
-        "stateName": "page({id:'viewUser'})"
+        "action": "cancelUser",
+        "stateName": "page({jsonName:'viewUser'})"
     }],
     "apiCall": {
         "url": "User/save",
@@ -83,6 +203,18 @@
     "preApi": {
         "url": "User/getOne",
         "params": "_id"
-    }
-
+    },
+    "sidemenu": [{
+          "name": "User",
+          "action": "sidemenuRedirect",
+          "jsonPage": "editUser",
+          "fieldsToSend": [1],
+          "callFindOne": "User/getOne"
+      }, {
+          "name": "HouseHold",
+          "action": "sidemenuRedirect",
+          "jsonPage": "viewHouseHold",
+          "fieldsToSend": [1],
+          "callFindOne": "User/getHouseHold"
+      }]
 }

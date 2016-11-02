@@ -1,0 +1,199 @@
+{
+    "title": "Create Personal Details",
+    "jsonPage": "viewPersonalDetails",
+    "desciption": "",
+    "pageType": "create",
+    "fields": [{
+        "name": "Id",
+        "type": "hidden",
+        "tableRef": "_id",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Image",
+        "type": "image",
+        "option": "single",
+        "tableRef": "image",
+        "placeholder": "Upload Image",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Title",
+        "type": "select",
+        "option":"single",
+        "tableRef": "title",
+        "placeholder": "Select title ",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": "Mr",
+            "name": "Mr"
+        }, {
+            "value": "Mrs",
+            "name": "Mrs"
+        }, {
+            "value": "Ms",
+            "name": "Ms"
+        }]
+    }, {
+        "name": "First Name",
+        "type": "text",
+        "tableRef": "firstName",
+        "placeholder": "Enter First SName",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Last Name",
+        "type": "text",
+        "tableRef": "lastName",
+        "placeholder": "Enter Last Name",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Date of birth",
+        "type": "date",
+        "tableRef": "dob",
+        "placeholder": "Enter Date of birth",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Address1",
+        "type": "text",
+        "tableRef": "address1",
+        "placeholder": "Enter Address1",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+     }, {
+        "name": "Address2",
+        "type": "text",
+        "tableRef": "address2",
+        "placeholder": "Enter Address2",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Town",
+        "type": "text",
+        "tableRef": "town",
+        "placeholder": "Enter Town",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "City",
+        "type": "text",
+        "tableRef": "city",
+        "placeholder": "Enter City",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Pincode",
+        "type": "text",
+        "tableRef": "pincode",
+        "option": "multiple",
+        "placeholder": "Enter Pincode",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Country",
+        "type": "text",
+        "tableRef": "country",
+        "placeholder": "Enter Country",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Latitude",
+        "type": "latLong",
+        "tableRef": "lat",
+        "placeholder": "Enter Latitude",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Longitude",
+        "type": "latLong",
+        "tableRef": "lng",
+        "placeholder": "Enter Longitude",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Question",
+        "type": "text",
+        "tableRef": "question",
+        "placeholder": "Question",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url":""
+    }, {
+        "name": "Answer",
+        "type": "text",
+        "tableRef": "answer",
+        "placeholder": "Enter Answer",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Buisness Name",
+        "type": "text",
+        "tableRef": "buisnessName",
+        "placeholder": "Enter Business Name",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Mobile",
+        "type": "number",
+        "tableRef": "mobile",
+        "placeholder": "Enter Mobile Number",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Buisness Type",
+        "type": "selectFromTable",
+        "tableRef": "buisnessType",
+        "option":"single",
+        "placeholder": "Select business type",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "Category/search",
+        "model": "buisnessType"
+    }, {
+        "name": "Registration Authority",
+        "type": "text",
+        "tableRef": "registrationAuthority",
+        "placeholder": "Enter Registration Authority",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "vatRegistrationNumber",
+        "type": "number",
+        "tableRef": "vatRegistrationNumber",
+        "placeholder": "Enter Vat Registration Number",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitPersonalDetails"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewPersonalDetails'})"
+    }],
+
+    "apiCall": {
+        "url": "PersonalDetails/save"
+    }
+}

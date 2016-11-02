@@ -1,0 +1,395 @@
+{
+    "title": "Edit Offer Details",
+    "jsonPage": "viewOffer",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Id",
+        "type": "hidden",
+        "tableRef": "_id",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "_id"
+    }, {
+        "name": "Offer Type [Promotional/Redemptional]",
+        "type": "text",
+        "tableRef": "offerType",
+        "placeholder": "Enter offer type",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "offerType"
+    }, {
+        "name": "Loyalty program name",
+        "type": "text",
+        "tableRef": "loyaltyProgramName",
+        "placeholder": "Enter loyalty program name",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "loyaltyProgramName"
+    }, {
+        "name": "Points/Stamps",
+        "type": "text",
+        "tableRef": "pointsStamps",
+        "placeholder": "Enter Points/Stamps",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "pointsStamps"
+    }, {
+        "name": "Basis",
+        "type": "chips",
+        "tableRef": "basis",
+        "placeholder": "Enter basis",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "basis"
+    }, {
+        "name": "For every Visit",
+        "type": "text",
+        "tableRef": "forEvery",
+        "placeholder": "Enter for Every",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "forEvery"
+    }, {
+        "name": "Minimum bill amount",
+        "type": "text",
+        "tableRef": "minBillAmount",
+        "placeholder": "Enter minimum bill amount",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "minBillAmount"
+    }, {
+        "name": "Promo image",
+        "type": "image",
+        "option":"single",
+        "tableRef": "promoImage",
+        "placeholder": "Upload promo image",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "promoImage"
+    }, {
+        "name": "Head lines",
+        "type": "text",
+        "tableRef": "addHeadlines",
+        "placeholder": "Enter add head lines",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "addHeadlines"
+    }, {
+        "name": "Total",
+        "type": "text",
+        "tableRef": "total",
+        "placeholder": "Enter total",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "total"
+    }, {
+        "name": "Real",
+        "type": "text",
+        "tableRef": "real",
+        "placeholder": "Enter real",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "real"
+    }, {
+        "name": "Minimum spend",
+        "type": "text",
+        "tableRef": "minSpendOf",
+        "placeholder": "Enter minimum spend",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "model": "minSpendOf",
+        "url": ""
+    }, {
+        "name": "Start From date",
+        "type": "date",
+        "tableRef": "startFromdate",
+        "placeholder": "Select startFromdate",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "startFromdate"
+    }, {
+        "name": "Start From time",
+        "type": "date",
+        "tableRef": "startFromTime",
+        "placeholder": "Select start from time",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "startFromTime"
+    }, {
+        "name": "End to date",
+        "type": "date",
+        "tableRef": "endToDate",
+        "placeholder": "Select end to date",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "endToDate"
+    }, {
+        "name": "End to time",
+        "type": "date",
+        "tableRef": "endToTime",
+        "placeholder": "Select end to time",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "endToTime"
+    }, {
+        "name": "is Redemption Offer",
+        "type": "select",
+        "option":"single",
+        "tableRef": "isRedemptionOffer",
+        "placeholder": "Enter is Redemption Offer",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value":"true",
+            "name":"Yes"
+        },{
+            "value":"false",
+            "name":"No"
+        }],
+        "model": "isRedemptionOffer"
+    }, {
+        "name": "Cost in points",
+        "type": "text",
+        "tableRef": "costInPoints",
+        "placeholder": "Enter cost in points",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "costInPoints"
+     }, {
+        "name": "Can be used",
+        "type": "text",
+        "tableRef": "canBeUsed",
+        "placeholder": "Enter can be used",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "canBeUsed"
+    }, {
+        "name": "Valid On",
+        "type": "select",
+        "option":"single",
+        "tableRef": "validOn",
+        "option":"multiple",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "model": "validOn",
+        "url": [{
+            "value":"Sunday",
+            "name":"Sunday"
+        },{
+            "value":"Monday",
+            "name":"Monday"
+        },{
+            "value":"Tuseday",
+            "name":"Tuseday"
+        },{
+            "value":"Wednesday",
+            "name":"Wednesday"
+        },{
+            "value":"Thursday",
+            "name":"Thursday"
+        },{
+            "value":"Friday",
+            "name":"Friday"
+        },{
+            "value":"Saturday",
+            "name":"Saturday"
+        }]
+    }, {
+        "name": "Location",
+        "type": "text",
+        "tableRef": "location",
+        "placeholder": "Enter Location",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "location"
+    }, {
+        "name": "Age greater then",
+        "type": "number",
+        "tableRef": "ageGreaterThen",
+        "placeholder": "Enter age greater then",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "ageGreaterThen"
+    }, {
+        "name": "Age lower limit",
+        "type": "number",
+        "tableRef": "ageLowerLimit",
+        "placeholder": "Enter age lower limit",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "ageLowerLimit"
+    }, {
+        "name": "Age upper limit",
+        "type": "number",
+        "tableRef": "ageUpperLimit",
+        "placeholder": "Enter age upper limit",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "ageUpperLimit"
+    }, {
+        "name": "Minimum balance",
+        "type": "text",
+        "tableRef": "minBalance",
+        "placeholder": "Enter add minimum balance",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "minBalance"
+    }, {
+        "name": "Last activity",
+        "type": "date",
+        "tableRef": "lastActivity",
+        "placeholder": "Enter Last activity",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "lastActivity"
+    }, {
+        "name": "Sex",
+        "type": "select",
+        "option":"single",
+        "tableRef": "sex",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value":"Male",
+            "name":"Male"
+        },{
+            "value":"Female",
+            "name":"Female"
+        },{
+            "value":"Other",
+            "name":"Other"
+        }],
+        "model": "sex"
+    }, {
+        "name": "Lifetime points",
+        "type": "text",
+        "tableRef": "lifeTimePoints",
+        "placeholder": "Enter Lifetime points",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "model": "lifeTimePoints",
+        "url": ""
+    }, {
+        "name": "Birthday from date",
+        "type": "date",
+        "tableRef": "birthdayFrom",
+        "placeholder": "Select birthday from date",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "birthdayFrom"
+    }, {
+        "name": "Birthday to date",
+        "type": "text",
+        "tableRef": "birthdayTo",
+        "placeholder": "Enter birthday to date",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "birthdayTo"
+    }, {
+        "name": "Anniversary date",
+        "type": "chips",
+        "tableRef": "anniversary",
+        "placeholder": "Enter anniversary date",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "anniversary"
+    }, {
+        "name": "Children age from",
+        "type": "text",
+        "tableRef": "childrenAgeFrom",
+        "placeholder": "Enter Children age from",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "childrenAgeFrom"
+    }, {
+        "name": "Children age to",
+        "type": "text",
+        "tableRef": "childrenAgeTo",
+        "placeholder": "Enter children age to",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "childrenAgeTo"
+    }, {
+        "name": "Nationality",
+        "type": "text",
+        "tableRef": "nationality",
+        "placeholder": "Enter Nationality",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "nationality"
+    }, {
+        "name": "Most visited branch",
+        "type": "text",
+        "tableRef": "mostVisitedBranch",
+        "placeholder": "Enter Most visited branch",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "mostVisitedBranch"
+    }, {
+        "name": "Three Month",
+        "type": "text",
+        "tableRef": "threeMonth",
+        "placeholder": "Enter three month",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "threeMonth"
+    }, {
+        "name": "City",
+        "type": "text",
+        "tableRef": "city",
+        "placeholder": "Enter City",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "city"
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitOffer"
+    }, {
+        "name": "cancel",
+        "action": "cancelOffer",
+        "stateName": "page({jsonName:'viewOffer'})"
+    }],
+    "apiCall": {
+        "url": "Offer/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "Offer/getOne",
+        "params": "_id"
+    }
+}

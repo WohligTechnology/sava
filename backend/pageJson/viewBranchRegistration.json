@@ -1,0 +1,48 @@
+{
+    "title": "BranchRegistration",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [{
+        "name": "Branch Id",
+        "isSort": "",
+        "tableRef": "branchId"
+    },{
+        "name": "Branch Name",
+        "isSort": "",
+        "tableRef": "branchName"
+    }, {
+        "name": "Addresss",
+        "isSort": "",
+        "tableRef": "address"
+    }, {
+        "name": "Number Of Employee",
+        "isSort": "",
+        "tableRef": "numberOfEmployee"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editBranchRegistration",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "BranchRegistration/getOne"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Tag",
+        "content": "Are you sure you want to delete User?",
+        "api": "BranchRegistration/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "BranchRegistration/search",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createBranchRegistration'})"
+}

@@ -1,130 +1,181 @@
 {
     "title": "Create User",
-    "name": "User",
     "jsonPage": "viewUser",
     "desciption": "",
     "pageType": "create",
-    "urlFields": ["newuser"],
     "fields": [{
-        "name": "Name",
+        "name": "Id",
+        "type": "hidden",
+        "tableRef": "_id",
+        "placeholder": "Id",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Full Name",
         "type": "text",
         "tableRef": "name",
         "placeholder": "Enter Name",
-        "id": "name",
-        "validation": ["", "trim", ""],
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
         "url": ""
-    }, {
-        "name": "Product",
-        "type": "box",
-        "tableRef": "product",
-        "validation": ["", "trim", ""],
-        "field": [{
-            "name": "Name",
-            "type": "text",
-            "tableRef": "name",
-            "placeholder": "Enter Name",
-            "id": "name",
-            "validation": ["", "trim", ""],
-            "url": "",
-            "onView": true
-        }, {
-            "name": "Mobile Number",
-            "type": "text",
-            "tableRef": "mobile",
-            "placeholder": "Enter Mobile",
-            "id": "name",
-            "validation": ["", "trim", ""],
-            "url": "",
-            "onView": true
-        }]
-    }, {
-        "name": "Hobbies",
-        "type": "tags",
-        "tableRef": "hobbies",
-        "placeholder": "Enter Hobbies",
-        "id": "hobbies",
-        "validation": ["", "trim", ""],
-        "url": "user/search",
-        "dropDownField": "name",
-        "fieldType": "",
-        "dropDownType": "multiple",
-        "dropDown": [{
-            "name": "mahesh"
-        }, {
-            "name": "sohan"
-        }]
-    }, {
-        "name": "User",
-        "type": "text",
-        "tableRef": "user",
-        "searchApi": "searchCall",
-        "placeholder": "Enter User",
-        "id": "user",
-        "validation": ["", "trim", ""],
-        "url": "user/search"
     }, {
         "name": "Email",
-        "type": "text",
+        "type": "email",
         "tableRef": "email",
         "placeholder": "Enter Email",
-        "id": "email",
-        "validation": ["", "trim", ""],
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
         "url": ""
-    }, {
-        "name": "Photo",
-        "type": "image",
-        "tableRef": "photo",
-        "placeholder": "Upload photo",
-        "id": "photo",
-        "validation": ["", "trim", ""],
-        "url": ""
-    }, {
-        "name": "Password",
-        "type": "password",
-        "tableRef": "password",
-        "placeholder": "Enter password",
-        "id": "password",
-        "validation": ["", "trim", ""],
-        "url": ""
-    }, {
-        "name": "Forgot Password",
-        "type": "password",
-        "tableRef": "forgotPassword",
-        "placeholder": "Enter forgot password",
-        "id": "forgotPassword",
-        "validation": ["", "trim", ""],
-        "url": ""
-    }, {
+    },{
         "name": "Mobile",
-        "type": "text",
+        "type": "number",
         "tableRef": "mobile",
-        "placeholder": "Enter mobile",
-        "id": "mobile",
-        "validation": ["", "trim", ""],
+        "placeholder": "Enter Mobile No",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
         "url": ""
-    }, {
-        "name": "OTP",
-        "type": "wysiwyg",
-        "tableRef": "otp",
-        "placeholder": "Enter Otp",
-        "id": "otp",
-        "validation": ["", "trim", ""],
+    },{
+        "name": "Gender",
+        "type": "select",
+        "option":"single",
+        "tableRef": "gender",
+        "placeholder": "Select Gender",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value" : "Male",
+            "name" : "Male"
+        },{
+            "value" : "Female",
+            "name" : "Female"
+        },{
+            "value" : "Other",
+            "name" : "Other"
+        }]
+    },{
+        "name": "DOB",
+        "type": "date",
+        "tableRef": "dob",
+        "placeholder": "Enter Date of birth",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
         "url": ""
+    },{
+        "name": "Address1",
+        "type": "text",
+        "tableRef": "address1",
+        "placeholder": "Enter Address1",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Address2",
+        "type": "text",
+        "tableRef": "address2",
+        "placeholder": "Enter Address2",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Town",
+        "type": "text",
+        "tableRef": "town",
+        "placeholder": "Enter Town",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "City",
+        "type": "text",
+        "tableRef": "city",
+        "placeholder": "Enter City",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Pincode",
+        "type": "Number",
+        "tableRef": "pincode",
+        "placeholder": "Enter Pincode",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Country",
+        "type": "text",
+        "tableRef": "country",
+        "placeholder": "Enter Country",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Latitude",
+        "type": "latLong",
+        "tableRef": "lat",
+        "placeholder": "Enter Latitude",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Longitude",
+        "type": "latLong",
+        "tableRef": "lng",
+        "placeholder": "Enter Longitude",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+     },{
+      "name": "Dietary Needs",
+      "type": "chips",
+      "tableRef": "dietaryNeeds",
+      "placeholder": "Enter Dietary Needs",
+      "id": "input4",
+      "validation": ["required", "trim", "unique"],
+      "url": ""
+    },{
+        "name": "Annual Income",
+        "type": "text",
+        "tableRef": "annualIncome",
+        "placeholder": "Enter Annual Income",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "facebook",
+        "type": "text",
+        "tableRef": "facebookID",
+        "placeholder": "Enter facebookID",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Google",
+        "type": "text",
+        "tableRef": "googleID",
+        "placeholder": "Enter GoogleID",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Favourite branch",
+        "type": "selectFromTable",
+        "option":"single",
+        "dropDownName": "branchName",
+        "tableRef": "favBranch",
+        "placeholder": "Select favourite branch",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "BranchRegistration/search"
     }],
     "action": [{
         "name": "submit",
-        "action": "submitUser",
-        "stateName": {
-            "page": "page",
-            "json": {
-                "id": "viewUser"
-            }
-        }
+        "action": "submitUser"
     }, {
         "name": "cancel",
-        "sideMenuRedirect": true,
-        "stateName": "page({id:'viewUser'})"
+        "stateName": "page({jsonName:'viewUser'})"
     }],
+
     "apiCall": {
         "url": "User/save"
     }

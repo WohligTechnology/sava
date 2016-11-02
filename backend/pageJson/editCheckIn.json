@@ -1,0 +1,90 @@
+{
+    "title": "Edit CheckIn Details",
+    "jsonPage": "viewCheckIn",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Employee",
+        "type": "selectFromTable",
+        "option": "single",
+        "tableRef": "employee",
+        "placeholder": "Select Employee",
+        "dropDownName": "firstName",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "Employee/search",
+        "model": "employee"
+    }, {
+        "name": "Branch",
+        "type": "selectFromTable",
+        "option": "single",
+        "tableRef": "branch",
+        "placeholder": "Select branch",
+        "id": "input3",
+        "dropDownName": "branchName",
+        "validation": ["required", "trim", "unique"],
+        "url": "BranchRegistration/search",
+        "model": "branch"
+    }, {
+        "name": "Id",
+        "type": "hidden",
+        "tableRef": "_id",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "_id"
+    }, {
+        "name": "From",
+        "type": "date",
+        "tableRef": "from",
+        "placeholder": "Select from date",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "from"
+    }, {
+        "name": "To",
+        "type": "date",
+        "tableRef": "to",
+        "placeholder": "Select to date",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "from"
+    }, {
+        "name": "Start Date",
+        "type": "date",
+        "tableRef": "start",
+        "placeholder": "Select start date",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "start"
+    }, {
+        "name": "Hours worked",
+        "type": "text",
+        "tableRef": "hoursWorked",
+        "placeholder": "Enter hours worked",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "hoursWorked"
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitCheckIn"
+    }, {
+        "name": "cancel",
+        "action": "cancelCheckIn",
+        "stateName": "page({jsonName:'viewCheckIn'})"
+    }],
+    "apiCall": {
+        "url": "CheckIn/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "CheckIn/getOne",
+        "params": "_id"
+    }
+}

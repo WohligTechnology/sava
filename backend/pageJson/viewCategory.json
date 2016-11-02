@@ -1,0 +1,43 @@
+{
+    "title": "Category",
+    "desciption": "",
+    "pageType": "view",
+    "sortable": "category/sort",
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "name"
+    }, {
+        "name": "Status",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "status"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editCategory",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "Category/getOne"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Category",
+        "content": "Are you sure you want to delete Category?",
+        "api": "Category/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "Category/search",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createCategory'})"
+}

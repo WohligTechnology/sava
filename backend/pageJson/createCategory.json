@@ -1,0 +1,41 @@
+{
+    "title": "Create Category",
+    "jsonPage": "viewCategory",
+    "desciption": "",
+    "pageType": "create",
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter Name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Status",
+        "type": "select",
+        "option":"single",
+        "tableRef": "status",
+        "placeholder": "Select status",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": true,
+            "name": "Enable"
+        }, {
+            "value": false,
+            "name": "Disable"
+        }]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitCategory"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewCategory'})"
+    }],
+
+    "apiCall": {
+        "url": "Category/save"
+    }
+}

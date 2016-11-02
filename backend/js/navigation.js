@@ -51,70 +51,48 @@ var navigationservice = angular.module('navigationservice', [])
     //     ]
     // },
     {
-        name: "HomeSlider",
+        name: "Branch Hours",
         classis: "active",
-        sref: "#/page/viewHomeSlider//"
+        sref: "#/page/viewHours//"
     }, {
-        name: "Activities",
+        name: "Branch Registration",
         classis: "active",
-        sref: "#/page/viewActivities//"
+        sref: "#/page/viewBranchRegistration//"
+    },{
+        name: "Category",
+        classis: "active",
+        sref: "#/page/viewCategory//"
     }, {
+        name: "Check In",
+        classis: "active",
+        sref: "#/page/viewCheckIn//"
+    }, {
+        name: "Employee",
+        classis: "active",
+        sref: "#/page/viewEmployee//"
+    },{
+        name: "House Hold",
+        classis: "active",
+        sref: "#/page/viewHouseHold//"
+    }, {
+        name: "Offer",
+        classis: "active",
+        sref: "#/page/viewOffer//"
+    },
+    {
         name: "Package",
         classis: "active",
         sref: "#/page/viewPackage//"
-    },{
-        name: "Destination",
-        classis: "active",
-        sref: "",
-        subnav: [
-
-            {
-                name: "Destination Entry",
-                classis: "active",
-                link: "#/page/viewDestination//",
-            },
-            {
-                name: "DestinationTitle",
-                classis: "active",
-                link: "#/page/viewDestinationTitle//",
-            },
-            {
-                name: "DestinationContent",
-                classis: "active",
-                link: "#/page/viewDestinationContent//",
-            }
-
-        ]
-    },{
-        name: "Common Banner",
-        classis: "active",
-        sref: "#/page/viewBanner//"
-    }, {
-        name: "What's Hot",
-        classis: "active",
-        sref: "#/page/viewWhatsHot//"
-    }, {
-        name: "What's Hot Slider",
-        classis: "active",
-        sref: "#/page/viewWhatsHotSlider//"
-    },{
-        name: "Subscribe",
-        classis: "active",
-        sref: "#/page/viewSubscribe//"
-    }, {
-        name: "Media",
-        classis: "active",
-        sref: "#/page/viewMedia//"
     },
-    // {
-    //     name: "Cart",
-    //     classis: "active",
-    //     sref: "#/page/viewCart//"
-    // },
     {
-        name: "Enquire",
+        name: "Time",
         classis: "active",
-        sref: "#/page/viewEnquire//"
+        sref: "#/page/viewTime//"
+    },
+    {
+        name: "User",
+        classis: "active",
+        sref: "#/page/viewUser//"
     }];
     var membershipLevel = [{
         name: "Student",

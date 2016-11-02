@@ -1,0 +1,48 @@
+{
+    "title": "CheckIn",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [{
+        "name": "From",
+        "isSort": "",
+        "tableRef": "from"
+    }, {
+        "name": "To",
+        "isSort": "",
+        "tableRef": "to"
+    }, {
+        "name": "Start",
+        "isSort": "",
+        "tableRef": "start"
+    }, {
+        "name": "Hours worked",
+        "isSort": "",
+        "tableRef": "hoursWorked"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editCheckIn",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "CheckIn/getOne"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Tag",
+        "content": "Are you sure you want to delete User?",
+        "api": "CheckIn/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "CheckIn/search",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createCheckIn'})"
+}

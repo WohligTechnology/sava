@@ -1,0 +1,44 @@
+{
+    "title": "BranchRegistration",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [{
+        "name": "Business Programme",
+        "isSort": "",
+        "tableRef": "buisnessProgramme"
+    }, {
+        "name": "To Issue",
+        "isSort": "",
+        "tableRef": "toIssue"
+    }, {
+        "name": "Total Reward",
+        "isSort": "",
+        "tableRef": "totalReward"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editLoyalty",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "Loyalty/getOne"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Tag",
+        "content": "Are you sure you want to delete User?",
+        "api": "Loyalty/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "Loyalty/search",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createLoyalty'})"
+}
