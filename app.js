@@ -23,7 +23,7 @@
 process.chdir(__dirname);
 var mongoose;
 mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/TBT', function (err) {
+mongoose.connect('mongodb://localhost:27017/SAVA2', function (err) {
     if (err) {
         console.log(err);
     }

@@ -1,0 +1,148 @@
+{
+"title": "Create User",
+  "name": "User",
+  "jsonPage": "viewAppUser",
+  "desciption": "",
+  "pageType": "create",
+  "urlFields": ["AppUser"],
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }, {
+        "name": "Email",
+        "type": "email",
+        "tableRef": "email",
+        "placeholder": "Enter Email",
+        "id": "email",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Mobile",
+        "type": "number",
+        "tableRef": "mobile",
+        "placeholder": "Enter Mobile",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Password",
+        "type": "text",
+        "tableRef": "password",
+        "placeholder": "Enter Password",
+        "id": "email",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Gender",
+        "type": "tags",
+        "tableRef": "gender",
+        "placeholder": "Enter Gender",
+        "id": "status",
+        "validation": ["", "trim", ""],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "onView": true,
+        "dropDown": ["Male","Female","Other"]
+    },{
+        "name": "DOB",
+        "type": "date",
+        "tableRef": "dob",
+        "placeholder": "Enter DOB",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{ 
+        "name": "Address1",
+        "type": "text",
+        "tableRef": "address1",
+        "placeholder": "Enter Address1",
+        "id": "email",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Address2",
+        "type": "text",
+        "tableRef": "address2",
+        "placeholder": "Enter Address2",
+        "id": "email",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Town",
+        "type": "text",
+        "tableRef": "town",
+        "placeholder": "Enter Town",
+        "id": "email",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "City",
+        "type": "text",
+        "tableRef": "city",
+        "placeholder": "Enter City",
+        "id": "email",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Pincode",
+        "type": "number",
+        "tableRef": "pincode",
+        "placeholder": "Enter Pincode",
+        "id": "email",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Country",
+        "type": "text",
+        "tableRef": "country",
+        "placeholder": "Enter Country",
+        "id": "email",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Latitude",
+        "type": "latLong",
+        "tableRef": "lat",
+        "placeholder": "Enter Latitude",
+        "id": "email",
+        "validation": ["", "", ""],
+        "url": ""
+    },{
+        "name": "longitude",
+        "type": "latLong",
+        "tableRef": "lng",
+        "placeholder": "Enter longitude",
+        "id": "email",
+        "validation": ["", "", ""],
+        "url": ""
+    }],
+   "action": [{
+        "name": "submit",
+        "action": "submitAppUser",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewAppUser"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewAppUser"
+            }
+        }
+    }],
+
+    "apiCall": {
+        "url": "AppUser/save"
+    }
+}

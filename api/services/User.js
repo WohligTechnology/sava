@@ -1,53 +1,31 @@
 var schema = new Schema({
-    //  ************Login Details*************
-    name: String,
+    name: {
+        type: String,
+        required: true
+    },
     email: {
         type: String,
-        validate: validators.isEmail(),
-        unique: true
+        validate: validators.isEmail()
+    },
+    photo: {
+        type: String,
+        default: ""
+    },
+    password: {
+        type: String,
+        default: ""
+    },
+    forgotPassword: {
+        type: String,
+        default: ""
     },
     mobile: {
         type: String,
-        validate: validators.isLength(8, 14)
+        default: ""
     },
-    password: String,
-    image: String,
-    gender: {
+    otp: {
         type: String,
-        enum: ["Male", "Female", "Other"]
-    },
-    dob: Date,
-    // ****************   Address  *********************
-
-    address1: String,
-    address2: String,
-    town: String,
-    city: String,
-    pincode: Number,
-    country: String,
-    lat: String,
-    lng: String,
-    // ****************   About You  *********************
-
-    dietaryNeeds: [String],
-    houseHold: [{
-        name: String,
-        age: {
-            type: Number,
-            validate: validators.isNumeric()
-        }
-    }],
-    annualIncome: String,
-    facebookID: String,
-    googleID: String,
-    otp: String,
-
-    favBranch: {
-        type: [{
-            type: Schema.Types.ObjectId,
-            ref: 'BranchRegistration'
-        }],
-        index: true
+        default: ""
     },
     accessToken: {
         type: [String],
@@ -66,7 +44,11 @@ var schema = new Schema({
         type: String,
         default: "User",
         enum: ['User', 'Admin']
-    }
+    },
+    order: {
+    type: Number,
+    default: 0
+  }
 });
 
 schema.plugin(deepPopulate, {});

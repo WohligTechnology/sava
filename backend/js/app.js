@@ -192,6 +192,30 @@ firstapp.directive('uploadImage', function ($http, $filter) {
 });
 
 
+
+firstapp.directive('latLong', function() {
+    return {
+        require: 'ngModel',
+        restrict: 'A',
+        link: function(scope, element, attr, ctrl) {
+            function inputValue(val) {
+                if (val) {
+                    var digits = val.replace(/[^(\-?\d+(\.\d+)?),\s*(\-?\d+(\.\d+)?)$]/g, '');
+
+                    if (digits !== val) {
+                        ctrl.$setViewValue(digits);
+                        ctrl.$render();
+                    }
+                    return digits;
+                }
+                return undefined;
+            }
+            ctrl.$parsers.push(inputValue);
+        }
+    };
+});
+
+
 firstapp.directive('onlyDigits', function () {
     return {
         require: 'ngModel',
