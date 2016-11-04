@@ -1,0 +1,103 @@
+{
+    "title": "Edit Business",
+    "name": "Business",
+    "jsonPage": "viewBusiness",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "User",
+        "type": "selectFromTable",
+        "tableRef": "User",
+        "placeholder": "Enter status",
+        "id": "input1",
+        "searchApi":"searchCall",
+        "validation": ["required", "trim", ""],
+        "url": "PersonalDetails/search",
+        "dropDownType": "single"
+    },{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter Name",
+        "id": "input1",
+        "validation": ["required", "trim", ""],
+        "url": ""
+    },{
+        "name": "Address",
+        "type": "textarea",
+        "tableRef": "address",
+        "placeholder": "Enter Address",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Contact",
+        "type": "number",
+        "tableRef": "number",
+        "placeholder": "Enter Contact",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Business Type",
+        "type": "text",
+        "tableRef": "buisnessType",
+        "placeholder": "Enter Business Type",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Registration Authority",
+        "type": "text",
+        "tableRef": "regAuthority",
+        "placeholder": "Enter Registration Authority",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "VAT",
+        "type": "number",
+        "tableRef": "VAT",
+        "placeholder": "Enter VAT Number",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Number Of Branches",
+        "type": "number",
+        "tableRef": "branches",
+        "placeholder": "Enter Branches",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitBusiness",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewBusiness"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewBusiness"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Business/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "Business/getOne",
+        "params": "_id"
+    }
+
+}

@@ -1,159 +1,170 @@
 {
-    "title": "Edit Branch Registration Details",
+    "title": "Edit BranchRegistration",
     "jsonPage": "viewBranchRegistration",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],
     "fields": [{
-        "name": "Id",
-        "type": "hidden",
-        "tableRef": "_id",
+        "name": "Owner Name",
+        "type": "selectFromTable",
+        "tableRef": "User",
+        "placeholder": "Enter status",
         "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "_id"
+        "searchApi":"searchCall",
+        "validation": ["required", "trim", ""],
+        "url": "PersonalDetails/search",
+        "dropDownType": "single"
+    }, {
+        "name": "Business",
+        "type": "selectFromTable",
+        "tableRef": "Business",
+        "placeholder": "Enter status",
+        "id": "input1",
+        "searchApi":"searchCall",
+        "validation": ["required", "trim", ""],
+        "url": "Business/search",
+        "filterField": "User",
+        "filterValue": "User",
+        "dropDownType": "single"
     },{
         "name": "Branch Name",
         "type": "text",
-        "tableRef": "branchName",
+        "tableRef": "name",
         "placeholder": "Enter Branch Name",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "branchName"
+        "url": ""
     }, {
         "name": "Branch Id",
-        "type": "text",
+        "type": "number",
         "tableRef": "branchId",
         "placeholder": "Enter Branch Id",
         "id": "input2",
         "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "branchId"
-    }, {
+        "url": ""
+    },{
         "name": "Address",
         "type": "text",
         "tableRef": "address",
         "placeholder": "Enter Address",
         "id": "input2",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "address"
-    }, {
-        "name": "ContactNumber",
-        "type": "chips",
-        "tableRef": "contactNumber",
-        "placeholder": "Enter Contact Number",
-        "id": "input3",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "contactNumber"
+        "validation": ["", "trim", "unique"],
+        "url": ""
     }, {
         "name": "Number of Employee",
         "type": "number",
         "tableRef": "numberOfEmployee",
         "placeholder": "Enter Number Of Employee",
         "id": "input3",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "numberOfEmployee"
-    }, {
-        "name": "Photo",
-        "type": "image",
-        "tableRef": "photo",
-        "model": "photo",
-        "option": "multiple",
-        "placeholder": "Upload Photo",
-        "id": "input3",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "photo"
+        "validation": ["", "trim", "unique"],
+        "url": ""
     }, {
         "name": "Establishment Type",
         "type": "text",
         "tableRef": "eastablishmentType",
-        "placeholder": "Enter Type",
+        "placeholder": "Enter Town",
         "id": "input3",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "eastablishmentType"
-    }, {
-        "name": "Cuisines",
-        "type": "chips",
+        "validation": ["", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Average cost",
+        "type": "number",
+        "tableRef": "avgCost",
+        "placeholder": "Enter Average (Number)",
+        "id": "input4",
+        "validation": ["", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Appoinment Type",
+        "type": "text",
+        "tableRef": "typeOfAppoinment",
+        "placeholder": "Enter Type Of Appoinment",
+        "id": "input4",
+        "validation": ["", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Cuisine ",
+        "type": "text",
         "tableRef": "cuisines",
         "placeholder": "Enter Cuisines",
-        "id": "input3",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "cuisines"
-    }, {
-        "name": "Collection",
-        "type": "select",
-        "option":"single",
-        "tableRef": "collections",
-        "id": "input3",
-        "validation": ["required", "trim", "unique"],
-        "model": "collections",
-        "url": [{
-            "value": "true",
-            "name": "Yes"
-        }, {
-            "value": "false",
-            "name": "No"
-        }]
-    }, {
-        "name": "Type of appointment",
-        "type": "select",
-        "option":"single",
-        "tableRef": "typeOfAppoinment",
         "id": "input4",
-        "validation": ["required", "trim", "unique"],
-        "url": [{
-            "value": "a",
-            "name": "A"
-        }, {
-            "value": "b",
-            "name": "B"
-        }, {
-            "value": "c",
-            "name": "C"
-        }],
-        "model": "typeOfAppoinment"
-    }, {
-        "name": "Payment Method",
-        "type": "chips",
-        "tableRef": "paymentMethods",
-        "placeholder": "Select Payment Method",
-        "id": "input4",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "paymentMethods"
-    }, {
-        "name": "Average cost",
-        "type": "text",
-        "tableRef": "avgCost",
-        "placeholder": "Enter average cost",
-        "id": "input4",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "avgCost"
-    }, {
+        "validation": ["", "trim", "unique"],
+        "url": ""
+    },{
         "name": "Tags",
-        "type": "chips",
+        "type": "text",
         "tableRef": "tags",
-        "placeholder": "Enter tags",
+        "placeholder": "Enter Type Of Appoinment",
         "id": "input4",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "tags"
+        "validation": ["", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Contact Numbers",
+        "type": "box",
+        "tableRef": "contactNumber",
+        "validation": ["", "trim", ""],
+        "fields": [{
+            "name": "Number",
+            "type": "number",
+            "option": "single",
+            "tableRef": "number",
+            "placeholder": "Enter Number",
+            "id": "input1",
+            "onView": true,
+            "validation": ["required", "trim", ""],
+            "url": ""
+        }]
+    },{
+        "name": "Photos",
+        "type": "box",
+        "tableRef": "photo",
+        "validation": ["", "trim", ""],
+        "fields": [{
+            "name": "Image",
+            "type": "image",
+            "option": "single",
+            "tableRef": "image",
+            "placeholder": "Enter Image",
+            "id": "input1",
+            "onView": true,
+            "validation": ["", "trim", ""],
+            "url": ""
+        }]
+    },{
+        "name": "Payment Method",
+        "type": "box",
+        "tableRef": "paymentMethods",
+        "validation": ["", "trim", ""],
+        "fields": [{
+           "name": "Method",
+            "type": "text",
+            "option": "single",
+            "tableRef": "name",
+            "placeholder": "Enter Method",
+            "id": "input1",
+            "onView": true,
+            "validation": ["required", "trim", ""],
+            "url": ""
+        }] 
     }],
     "action": [{
         "name": "submit",
-        "action": "submitBranchRegistration"
+        "action": "submitAppUser",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewBranchRegistration"
+            }
+        }
     }, {
         "name": "cancel",
-        "action": "cancelBranchRegistration",
-        "stateName": "page({jsonName:'viewBranchRegistration'})"
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewBranchRegistration"
+            }
+        }
     }],
     "apiCall": {
         "url": "BranchRegistration/save",

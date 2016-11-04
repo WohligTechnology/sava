@@ -1,12 +1,16 @@
 var schema = new Schema({
-  image:{
-    type:String
-  },
+    email:{
+      type: String,
+      validate: validators.isEmail(),
+      unique: true
+    },
+    image:String,
+    password:String,
     title:{
       type:String,
       enum:["Mr","Mrs","Ms"]
     },
-    firstName :{
+    name :{
       type:String
     },
     lastName :{
@@ -23,35 +27,16 @@ var schema = new Schema({
     country:String,
     lat:String,
     lng:String,
-      question:String,
-      answer:String,
-    buisnessName:{
-      type:String,
-      unique:true
-    },
-    buisnessAddress:{
-      type:String
-    },
-    mobile:{
-      type:String,
-      unique:true
-    },
-    buisnessType:{
-      type: Schema.Types.ObjectId,
-      ref:"Category"
-    },
-    registrationAuthority:{
-      type:String
-    },
-    vatRegistrationNumber:{
-      type:String
-    },
-    numberOfBranches:{
-      type:Number
-    }
+    question:String,
+    answer:String,
+    facebookID: String,
+    googleID: String,
+    otp: String
 });
 
-schema.plugin(deepPopulate, {});
+schema.plugin(deepPopulate, {
+  
+});
 schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
 module.exports = mongoose.model('PersonalDetails', schema);

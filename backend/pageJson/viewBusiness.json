@@ -1,29 +1,27 @@
 {
-  "title": "Banner",
-  "description": "List of Banner",
+  "title": "Business",
+  "description": "List of Business",
   "pageType": "view",
   "sendIdWithCreate": true,
   "urlFields": ["_id"],
     "fields": [{
-        "name": "Name",
+        "name": "User",
+        "isSort": "",
+        "tableRef": {
+            "field": "User",
+            "tableRef": "name"
+        }
+    },{
+        "name": "Business Name",
         "isSort": "",
         "tableRef": "name"
-    },{
-        "name": "Banner",
-        "type": "image",
-        "isSort": "",
-        "tableRef": "banner"
-    },{
-        "name": "Status",
-        "isSort": "",
-        "tableRef": "status"
     }],
     "action": [{
         "name": "edit",
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editBanner",
+        "action": "editBusiness",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -32,9 +30,9 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete Banner",
-        "content": "Are you sure you want to delete Banner?",
-        "api": "Banner/delete",
+        "title": "Delete Business",
+        "content": "Are you sure you want to delete Business?",
+        "api": "Business/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
@@ -57,10 +55,10 @@
         "icon": "plus",
         "class": "btn-success",
         "type": "page",
-        "action": "createBanner"
+        "action": "createBusiness"
     }],
     "apiCall": {
-        "url": "Banner/search",
+        "url": "Business/search",
         "params": ""
     }
 }

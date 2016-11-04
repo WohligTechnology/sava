@@ -93,6 +93,14 @@ var navigationservice = angular.module('navigationservice', [])
         name: "User",
         classis: "active",
         sref: "#/page/viewAppUser//"
+    }, {
+        name: "Personal Details",
+        classis: "active",
+        sref: "#/page/viewPersonalDetails//"
+    },{
+        name: "Business",
+        classis: "active",
+        sref: "#/page/viewBusiness//"
     }];
     var membershipLevel = [{
         name: "Student",

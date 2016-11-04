@@ -1,48 +1,61 @@
 {
-    "title": "BranchRegistration",
-    "desciption": "",
+     "title": "BranchRegistration",
+    "description": "List of Branches",
     "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
     "fields": [{
-        "name": "Branch Id",
+        "name": "Branch Name ",
         "isSort": "",
-        "tableRef": "branchId"
+        "tableRef": "name"
     },{
-        "name": "Branch Name",
-        "isSort": "",
-        "tableRef": "branchName"
-    }, {
-        "name": "Addresss",
-        "isSort": "",
-        "tableRef": "address"
-    }, {
-        "name": "Number Of Employee",
+        "name": "No Of Employee",
         "isSort": "",
         "tableRef": "numberOfEmployee"
     }],
     "action": [{
         "name": "edit",
-        "icon": "mode_edit",
-        "color": "blue",
-        "action": "redirect",
-        "jsonPage": "editBranchRegistration",
-        "fieldsToSend": ["_id"],
-        "callFindOne": "BranchRegistration/getOne"
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editBranchRegistration",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
     }, {
         "name": "delete",
-        "icon": "delete",
-        "color": "red",
-        "action": "apiCallConfirm",
-        "title": "Delete Tag",
-        "content": "Are you sure you want to delete User?",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete BranchRegistration",
+        "content": "Are you sure you want to delete BranchRegistration?",
         "api": "BranchRegistration/delete",
-        "fieldsToSend": [{
+        "fieldsToSend": {
             "name": "_id",
             "value": "_id"
-        }]
+        }
+    }],
+    "button": [{
+        "name": "Excel Export",
+        "icon": "print",
+        "class": "btn-danger",
+        "type": "redirect",
+        "action": "excelexport"
+    }, {
+        "name": "Upload Excel",
+        "icon": "delete",
+        "class": "btn-warning",
+        "type": "redirect",
+        "action": "uploadcsv"
+    }, {
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createBranchRegistration"
     }],
     "apiCall": {
         "url": "BranchRegistration/search",
-        "params": ""
-    },
-    "createButtonState": "page({jsonName:'createBranchRegistration'})"
+        "params": "_id"
+    }
 }

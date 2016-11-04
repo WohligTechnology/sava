@@ -52,7 +52,8 @@ var schema = new Schema({
       ref: 'BranchRegistration'
     }],
     index: true
-  }
+  },
+  UserType:String
 });
 
 schema.plugin(deepPopulate, {});

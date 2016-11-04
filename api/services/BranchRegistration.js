@@ -1,34 +1,53 @@
 var objectid = require("mongodb").ObjectId;
 var schema = new Schema({
-  branchName: String,
-  branchId: String,
+  User:{
+    type: Schema.Types.ObjectId,
+    ref: 'PersonalDetails',
+    index: true
+  },
+  Business:{
+    type: Schema.Types.ObjectId,
+    ref: 'Business',
+    index: true
+  },
+  name: String,
+  branchId: Number,
   address: String,
-  contactNumber: [Number],
+  contactNumber: [{
+    number:Number
+  }],
   numberOfEmployee: Number,
   photo: [{
         image: String
     }],
   eastablishmentType: String,
-  cuisines: [String],
+  cuisines: String,
   collections: {
     type: Boolean,
     default: false
   },
   typeOfAppoinment: {
-    type: String,
-    enum: ["a", "b", "c"]
+    type: String
   },
-  paymentMethods: [String],
+  paymentMethods: [{
+    name:String
+  }],
   avgCost: Number,
-  tags: [String]
+  tags: String
 });
 
-schema.plugin(deepPopulate, {});
+schema.plugin(deepPopulate, {
+    populate:{
+    'Business':{
+      select:'name _id'
+    }
+  }
+});
 schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
 module.exports = mongoose.model('BranchRegistration', schema);
 
-var exports = _.cloneDeep(require("sails-wohlig-service")(schema));
+var exports = _.cloneDeep(require("sails-wohlig-service")(schema,'Business','Business'));
 var model = {
   getHours: function(data, callback) {
     BranchRegistration.findOne({
