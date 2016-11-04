@@ -216,6 +216,30 @@ firstapp.directive('latLong', function() {
 });
 
 
+
+
+
+firstapp.directive('timeStamp', function() {
+    return {
+        require: 'ngModel',
+        restrict: 'A',
+        link: function(scope, element, attr, ctrl) {
+            function inputValue(val) {
+                if (val) {
+                    var digits = val.replace(/[^([01]\d|2[0-3]):?([0-5]\d)$]/g, '');
+                    if (digits !== val) {
+                        ctrl.$setViewValue(digits);
+                        ctrl.$render();
+                    }
+                    return digits;
+                }
+                return undefined;
+            }
+            ctrl.$parsers.push(inputValue);
+        }
+    };
+});
+
 firstapp.directive('onlyDigits', function () {
     return {
         require: 'ngModel',

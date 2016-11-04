@@ -14,7 +14,7 @@ var schema = new Schema({
 schema.plugin(deepPopulate, {
   populate : {
     'branchName' : {
-      select : '_id branchName'
+      select : '_id name'
     }
   }
 });

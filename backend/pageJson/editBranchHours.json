@@ -1,0 +1,79 @@
+{
+    "title": "Edit Hours",
+    "jsonPage": "viewBranchHours",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Branch Name",
+        "type": "selectFromTable",
+        "tableRef": "branchName",
+        "placeholder": "Enter Branch",
+        "id": "input1",
+        "searchApi":"searchCall",
+        "validation": ["required", "trim", ""],
+        "url": "BranchRegistration/search",
+        "dropDownType": "single"
+    },{
+        "name": "Day Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter Day",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Time",
+        "type": "box",
+        "tableRef": "time",
+        "validation": ["", "trim", ""],
+        "fields": [{
+            "name": "From",
+            "type": "time",
+            "option": "single",
+            "tableRef": "from",
+            "placeholder": "From",
+            "id": "input1",
+            "onView": true,
+            "validation": ["required", "trim", ""],
+            "url": ""
+        },{
+            "name": "To",
+            "type": "time",
+            "option": "single",
+            "tableRef": "to",
+            "placeholder": "To ",
+            "id": "input1",
+            "onView": true,
+            "validation": ["required", "trim", ""],
+            "url": ""
+        }]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitAppUser",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewBranchHours"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewBranchHours"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "BranchHours/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "BranchHours/getOne",
+        "params": "_id"
+    }
+}
