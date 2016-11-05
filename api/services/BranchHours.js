@@ -6,8 +6,8 @@ var schema = new Schema({
     },
     name: String,
     time: [{
-      from: String,
-      to: String
+      from: Date,
+      to: Date
     }]
 });
 

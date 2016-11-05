@@ -23,7 +23,7 @@
         "tableRef": "name",
         "placeholder": "Enter name",
         "id": "input1",
-        "validation": ["", "trim", ""],
+        "validation": ["required", "trim", ""],
         "url": ""
     },{
         "name": "Last Name",

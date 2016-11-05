@@ -7,51 +7,39 @@
     "fields": [{
         "name": "Employee",
         "type": "selectFromTable",
-        "option": "single",
         "tableRef": "employee",
         "placeholder": "Select Employee",
-        "dropDownName": "firstName",
-        "id": "input3",
-        "validation": ["required", "trim", "unique"],
-        "url": "Employee/search",
-        "model": "employee"
-    }, {
-        "name": "Branch",
-        "type": "selectFromTable",
-        "option": "single",
-        "tableRef": "branch",
-        "placeholder": "Select branch",
-        "id": "input3",
-        "dropDownName": "branchName",
-        "validation": ["required", "trim", "unique"],
-        "url": "BranchRegistration/search",
-        "model": "branch"
-    }, {
-        "name": "Id",
-        "type": "hidden",
-        "tableRef": "_id",
         "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "_id"
+        "searchApi":"searchCall",
+        "validation": ["required", "trim", ""],
+        "url": "Employee/search",
+        "dropDownType": "single"
+    }, {
+        "name": "Branch Name",
+        "type": "selectFromTable",
+        "tableRef": "branch",
+        "placeholder": "Enter Branch",
+        "id": "input1",
+        "searchApi":"searchCall",
+        "validation": ["required", "trim", ""],
+        "url": "BranchRegistration/search",
+        "dropDownType": "single"
     }, {
         "name": "From",
-        "type": "date",
+        "type": "time",
         "tableRef": "from",
         "placeholder": "Select from date",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "from"
+        "url": ""
     }, {
         "name": "To",
-        "type": "date",
+        "type": "time",
         "tableRef": "to",
         "placeholder": "Select to date",
         "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "from"
+        "validation": ["", "trim", "unique"],
+        "url": ""
     }, {
         "name": "Start Date",
         "type": "date",
@@ -59,8 +47,7 @@
         "placeholder": "Select start date",
         "id": "input2",
         "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "start"
+        "url": ""
     }, {
         "name": "Hours worked",
         "type": "text",
@@ -68,16 +55,26 @@
         "placeholder": "Enter hours worked",
         "id": "input3",
         "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "hoursWorked"
+        "url": ""
     }],
     "action": [{
         "name": "submit",
-        "action": "submitCheckIn"
+        "action": "submitCheckIn",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewCheckIn"
+            }
+        }
     }, {
         "name": "cancel",
-        "action": "cancelCheckIn",
-        "stateName": "page({jsonName:'viewCheckIn'})"
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewCheckIn"
+            }
+        }
     }],
     "apiCall": {
         "url": "CheckIn/save",

@@ -1,49 +1,78 @@
 {
     "title": "Employee",
-    "desciption": "",
+    "description": "List of Employee",
     "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
     "fields": [{
         "name": "Image",
         "isSort": "",
         "tableRef": "image",
         "type": "image"
     }, {
-        "name": "First Name",
+        "name": "Employee Name",
         "isSort": "",
-        "tableRef": "firstName"
-    }, {
-        "name": "Last Name",
-        "isSort": "",
-        "tableRef": "lastName"
+        "tableRef": "name"
     }, {
         "name": "Email",
         "isSort": "",
         "tableRef": "email"
+    },{
+        "name": "Emp Id",
+        "isSort": "",
+        "tableRef": "employeeId"
+    },{
+        "name": "Branch Name",
+        "type": "text",
+        "isSort": "",
+        "tableRef": {
+            "field": "branch",
+            "tableRef": "name"
+        }
     }],
     "action": [{
         "name": "edit",
-        "icon": "mode_edit",
-        "color": "blue",
-        "action": "redirect",
-        "jsonPage": "editEmployee",
-        "fieldsToSend": ["_id"],
-        "callFindOne": "Employee/getOne"
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editEmployee",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
     }, {
         "name": "delete",
-        "icon": "delete",
-        "color": "red",
-        "action": "apiCallConfirm",
-        "title": "Delete Tag",
-        "content": "Are you sure you want to delete User?",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete Employee",
+        "content": "Are you sure you want to delete Employee?",
         "api": "Employee/delete",
-        "fieldsToSend": [{
+        "fieldsToSend": {
             "name": "_id",
             "value": "_id"
-        }]
+        }
+    }],
+    "button": [{
+        "name": "Excel Export",
+        "icon": "print",
+        "class": "btn-danger",
+        "type": "redirect",
+        "action": "excelexport"
+    }, {
+        "name": "Upload Excel",
+        "icon": "delete",
+        "class": "btn-warning",
+        "type": "redirect",
+        "action": "uploadcsv"
+    }, {
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createEmployee"
     }],
     "apiCall": {
         "url": "Employee/search",
-        "params": ""
-    },
-    "createButtonState": "page({jsonName:'createEmployee'})"
+        "params": "_id"
+    }
 }

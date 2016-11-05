@@ -1,23 +1,17 @@
 var schema = new Schema({
-  image:String,
-    firstName:String,
+    image:String,
+    name:String,
     lastName:String,
-    mobile:{
-      type:Number,
-      validate:validators.isNumeric()
-    },
+    mobile:String,
     email:{
       type:String,
       validate:validators.isEmail()
     },
     employeeId:Number,
-    roles:{
-      type:String,
-      enum:["CEO","Principle","Manager","APM"]
-    },
-    role:{
+    role:String,
+    business:{
       type:Schema.Types.ObjectId,
-      ref:"BranchRegistration",
+      ref:"Business",
       index : true
     },
     branch:{
@@ -27,11 +21,17 @@ var schema = new Schema({
     }
 });
 
-schema.plugin(deepPopulate, {});
+schema.plugin(deepPopulate, {
+  populate:{
+    'branch':{
+      select:"_id name"
+    }
+  }
+});
 schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
 module.exports = mongoose.model('Employee', schema);
 
-var exports = _.cloneDeep(require("sails-wohlig-service")(schema));
+var exports = _.cloneDeep(require("sails-wohlig-service")(schema,'branch','branch'));
 var model = {};
 module.exports = _.assign(module.exports, exports, model);

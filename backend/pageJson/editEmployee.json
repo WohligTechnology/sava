@@ -1,113 +1,99 @@
 {
-    "title": "Edit Employee Details",
+    "title": "Edit Employee",
     "jsonPage": "viewEmployee",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],
-    "fields": [{
-        "name": "Id",
-        "type": "hidden",
-        "tableRef": "_id",
+    "fields": [ {
+        "name": "Business Name",
+        "type": "selectFromTable",
+        "tableRef": "business",
+        "placeholder": "Enter status",
         "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "_id"
+        "searchApi":"searchCall",
+        "validation": ["required", "trim", ""],
+        "url": "business/search",
+        "dropDownType": "single"
     }, {
-        "name": "Upload Image",
+        "name": "Branch",
+        "type": "selectFromTable",
+        "tableRef": "branch",
+        "placeholder": "Enter status",
+        "id": "input1",
+        "searchApi":"searchCall",
+        "validation": ["required", "trim", ""],
+        "url": "BranchRegistration/search",
+        "filterField": "Business",
+        "filterValue": "business",
+        "dropDownType": "single"
+    },{
+        "name": "Profile Pic",
         "type": "image",
         "tableRef": "image",
         "option": "single",
         "placeholder": "Upload image",
         "id": "input1",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "image"
-    }, {
-        "name": "First Name",
+        "validation": ["", "trim", "unique"],
+        "url": ""
+    },  {
+        "name": "Name",
         "type": "text",
-        "tableRef": "firstName",
-        "placeholder": "Enter First Name",
-        "id": "input2",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "firstName"
-    }, {
-        "name": "Last Name",
-        "type": "text",
-        "tableRef": "lastName",
-        "placeholder": "Enter Last Name",
-        "id": "input2",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "lastName"
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", ""],
+        "url": ""
     }, {
         "name": "Mobile",
         "type": "number",
         "tableRef": "mobile",
-        "placeholder": "Enter Mobile Number",
-        "id": "input3",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "mobile"
+        "placeholder": "Enter Mobile",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
     }, {
         "name": "Email",
         "type": "email",
         "tableRef": "email",
         "placeholder": "Enter Email",
         "id": "input3",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "email"
+        "validation": ["", "trim", "unique"],
+        "url": ""
     }, {
         "name": "Employee Id",
-        "type": "text",
+        "type": "number",
         "tableRef": "employeeId",
         "placeholder": "Enter Employee Id",
         "id": "input3",
-        "validation": ["required", "trim", "unique"],
-        "url": "",
-        "model": "employeeId"
-    }, {
-        "name": "Roles",
-        "type": "select",
-        "option":"single",
-        "tableRef": "roles",
-        "placeholder": "Select roles",
-        "id": "input3",
-        "validation": ["required", "trim", "unique"],
-        "model":"roles",
-        "url": [{
-            "value": "CEO",
-            "name": "CEO"
-        }, {
-            "value": "Principle",
-            "name": "Principle"
-        }, {
-            "value": "Manager",
-            "name": "Manager"
-        }, {
-            "value": "APM",
-            "name": "APM"
-        }]
+        "validation": ["", "trim", "unique"],
+        "url": ""
     },{
-        "name": "Branch",
-        "type": "selectFromTable",
-        "option": "single",
-        "tableRef": "branch",
-        "placeholder": "Select branch",
-        "id": "input3",
-        "dropDownName": "branchName",
-        "validation": ["required", "trim", "unique"],
-        "url": "BranchRegistration/search",
-        "model": "branch"
+        "name": "Role",
+        "type": "text",
+        "tableRef": "role",
+        "placeholder": "Enter Role",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": ""
     }],
     "action": [{
         "name": "submit",
-        "action": "submitEmployee"
+        "action": "submitAppUser",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewEmployee"
+            }
+        }
     }, {
         "name": "cancel",
-        "action": "cancelEmployee",
-        "stateName": "page({jsonName:'viewEmployee'})"
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewEmployee"
+            }
+        }
     }],
     "apiCall": {
         "url": "Employee/save",
