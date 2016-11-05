@@ -378,7 +378,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.formData[$scope.type.tableRef] = moment($scope.formData[$scope.type.tableRef]).toDate();
     }
     if ($scope.type.type == "time") {
-        $scope.formData[$scope.type.tableRef] = moment(moment($scope.formData[$scope.type.tableRef]).toDate()).format('LT');
+        $scope.formData[$scope.type.tableRef] = moment($scope.formData[$scope.type.tableRef]).toDate();
     }
     if ($scope.type.type == "password") {
         $scope.formData[$scope.type.tableRef] = "";
