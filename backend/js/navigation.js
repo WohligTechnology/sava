@@ -51,7 +51,7 @@ var navigationservice = angular.module('navigationservice', [])
         name: "User",
         classis: "active",
         sref: "#/page/viewAppUser//"
-    },
+    }
 
     // {
     //     name: "General",
@@ -95,21 +95,7 @@ var navigationservice = angular.module('navigationservice', [])
     //         }
     //     ]
     // },
-      {
-        name: "House Hold",
-        classis: "active",
-        sref: "#/page/viewHouseHold//"
-    }, 
-    {
-        name: "Package",
-        classis: "active",
-        sref: "#/page/viewPackage//"
-    },
-    {
-        name: "Time",
-        classis: "active",
-        sref: "#/page/viewTime//"
-    }];
+     ];
     var membershipLevel = [{
         name: "Student",
         id: "Student"

@@ -4,7 +4,11 @@
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
-    "fields": [{
+    "fields": [        {
+        "name": "Offer Heading",
+        "isSort": "",
+        "tableRef": "addHeadlines"
+    },{
         "name": "Offer type",
         "isSort": "",
         "tableRef": "offerType"

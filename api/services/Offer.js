@@ -22,8 +22,9 @@ var schema = new Schema({
   costInPoints:Number,
   canBeUsed:Number,
   validOn:[{
-    type:String,
-    enum:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    name:{
+    type:String
+  }
   }],
   location:String,
   ageGreaterThen:Number,
@@ -42,7 +43,11 @@ var schema = new Schema({
   childrenAgeFrom:Number,
   childrenAgeTo:Number,
   nationality:String,
-  mostVisitedBranch:String,
+  mostVisitedBranch:{
+    type: Schema.Types.ObjectId,
+    ref: 'BranchRegistration',
+    index: true
+  },
   threeMonth:Number,
   city:String,
   headline:String,
@@ -51,11 +56,17 @@ var schema = new Schema({
   termsAndConditions:String
 });
 
-schema.plugin(deepPopulate, {});
+schema.plugin(deepPopulate, {
+  populate:{
+    'loyaltyProgramName':{
+      select:"_id name"
+    }
+  }
+});
 schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
 module.exports = mongoose.model('Offer', schema);
 
-var exports = _.cloneDeep(require("sails-wohlig-service")(schema));
+var exports = _.cloneDeep(require("sails-wohlig-service")(schema,'loyaltyProgramName','loyaltyProgramName'));
 var model = {};
 module.exports = _.assign(module.exports, exports, model);
