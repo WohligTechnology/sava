@@ -50,7 +50,7 @@
         "url": ""
     }, {
         "name": "Hours worked",
-        "type": "text",
+        "type": "hours",
         "tableRef": "hoursWorked",
         "placeholder": "Enter hours worked",
         "id": "input3",

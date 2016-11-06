@@ -1,6 +1,10 @@
 var schema = new Schema({
   offerType:String,
-  loyaltyProgramName:String,
+   loyaltyProgramName: {
+    type: Schema.Types.ObjectId,
+    ref: 'Loyalty',
+    index: true
+  },
   pointsStamps:String,
   basis:[String],
   forEvery:Number,

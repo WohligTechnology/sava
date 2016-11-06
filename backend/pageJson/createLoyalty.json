@@ -1,46 +1,69 @@
 {
-    "title": "Create Loyalty",
-    "jsonPage": "viewLoyalty",
-    "desciption": "",
-    "pageType": "create",
+   "title": "Create Loyalty",
+  "name": "User",
+  "jsonPage": "viewLoyalty",
+  "desciption": "",
+  "pageType": "create",
+  "urlFields": ["Loyalty"],
     "fields": [{
-        "name": "Buisness Programme",
+        "name": "Programme Name",
         "type": "text",
-        "tableRef": "buisnessProgramme",
-        "placeholder": "Enter Buisness Programme",
-        "id": "input2",
-        "validation": ["required", "trim", "unique"],
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", ""],
         "url": ""
-    }, {
+    },{
+        "name": "Business Programme",
+        "type": "tags",
+        "tableRef": "buisnessProgramme",
+        "placeholder": "Enter Programme Name",
+        "id": "status",
+        "validation": ["", "trim", ""],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "onView": true,
+        "dropDown": ["Single","Coalition"]
+    },{
         "name": "To Issue",
-        "type": "select",
-        "option":"single",
+        "type": "tags",
         "tableRef": "toIssue",
-        "placeholder": "Enter to issue",
-        "id": "input3",
-        "validation": ["required", "trim", "unique"],
-        "url": [{
-            "value": "Points",
-            "name": "Points"
-        }, {
-            "value": "Stamps",
-            "name": "Stamps"
-        }]
-    }, {
-        "name": "Total reward",
-        "type": "text",
-        "tableRef": "totalReward",
-        "placeholder": "Enter total reward",
-        "id": "input3",
-        "validation": ["required", "trim", "unique"],
+        "placeholder": "Enter To Issue",
+        "id": "status",
+        "validation": ["", "trim", ""],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "onView": true,
+        "dropDown": ["Points","Stamps"]
+    },{
+        "name": "Total",
+        "type": "number",
+        "tableRef": "total",
+        "placeholder": "Total",
+        "id": "input1",
+        "validation": ["", "trim", ""],
         "url": ""
     }],
-    "action": [{
+   "action": [{
         "name": "submit",
-        "action": "submitLoyalty"
+        "action": "submitAppUser",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewLoyalty"
+            }
+        }
     }, {
         "name": "cancel",
-        "stateName": "page({jsonName:'viewLoyalty'})"
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewLoyalty"
+            }
+        }
     }],
 
     "apiCall": {

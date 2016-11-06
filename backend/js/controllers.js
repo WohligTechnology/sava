@@ -8,7 +8,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
     $state.go("page", {
-        id: "viewHomeSlider"
+        id: "viewPersonalDetails"
     });
 })
 

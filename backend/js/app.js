@@ -215,10 +215,6 @@ firstapp.directive('latLong', function() {
     };
 });
 
-
-
-
-
 firstapp.directive('timeStamp', function() {
     return {
         require: 'ngModel',

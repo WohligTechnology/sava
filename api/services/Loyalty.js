@@ -1,11 +1,14 @@
 var schema = new Schema({
-  buisnessProgramme:String,
+  name:String,
+  buisnessProgramme:{
+    type:String,
+    enum:["Single","Coalition"]
+  },
   toIssue:{
     type:String,
     enum:["Points","Stamps"]
   },
-  totalReward:Number
-
+  total:Number
 });
 
 schema.plugin(deepPopulate, {});

@@ -1,49 +1,67 @@
 {
-    "title": "Offer",
-    "desciption": "",
+     "title": "Offer",
+    "description": "List of Offer",
     "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
     "fields": [{
         "name": "Offer type",
         "isSort": "",
         "tableRef": "offerType"
-    }, {
+    }, 
+    {
         "name": "Programm name",
         "isSort": "",
-        "tableRef": "loyaltyProgramName"
-    }, {
-        "name": "Points/Stamps",
-        "isSort": "",
-        "tableRef": "pointsStamps"
-    }, {
-        "name": "Promo image",
-        "type": "image",
-        "isSort": "",
-        "tableRef": "promoImage"
-    }],
+         "tableRef": {
+            "field": "loyaltyProgramName",
+            "tableRef": "name"
+        }
+    }
+    ],
     "action": [{
         "name": "edit",
-        "icon": "mode_edit",
-        "color": "blue",
-        "action": "redirect",
-        "jsonPage": "editOffer",
-        "fieldsToSend": ["_id"],
-        "callFindOne": "Offer/getOne"
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editOffer",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
     }, {
         "name": "delete",
-        "icon": "delete",
-        "color": "red",
-        "action": "apiCallConfirm",
-        "title": "Delete Tag",
-        "content": "Are you sure you want to delete User?",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete Offer",
+        "content": "Are you sure you want to delete Offer?",
         "api": "Offer/delete",
-        "fieldsToSend": [{
+        "fieldsToSend": {
             "name": "_id",
             "value": "_id"
-        }]
+        }
+    }],
+    "button": [{
+        "name": "Excel Export",
+        "icon": "print",
+        "class": "btn-danger",
+        "type": "redirect",
+        "action": "excelexport"
+    }, {
+        "name": "Upload Excel",
+        "icon": "delete",
+        "class": "btn-warning",
+        "type": "redirect",
+        "action": "uploadcsv"
+    }, {
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createOffer"
     }],
     "apiCall": {
         "url": "Offer/search",
-        "params": ""
-    },
-    "createButtonState": "page({jsonName:'createOffer'})"
+        "params": "_id"
+    }
 }
+

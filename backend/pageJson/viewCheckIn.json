@@ -25,6 +25,7 @@
         "tableRef": "from"
     }, {
         "name": "To",
+        "type":"time",
         "isSort": "",
         "tableRef": "to"
     }, {
