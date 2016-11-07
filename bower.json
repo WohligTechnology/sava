@@ -63,6 +63,6 @@
     "angular-ui-swiper": "^2.3.6"
   },
   "resolutions": {
-    "angular": ">1.5.x"
+    "angular": "1.5.8"
   }
 }
