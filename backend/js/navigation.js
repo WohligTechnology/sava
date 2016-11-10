@@ -25,7 +25,7 @@ var navigationservice = angular.module('navigationservice', [])
     {
         name: "Branch Hours",
         classis: "active",
-        sref: "#/page/viewHours//"
+        sref: "#/page/viewBranchHours//"
     },
     {
         name: "Employee",

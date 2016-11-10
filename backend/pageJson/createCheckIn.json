@@ -47,7 +47,7 @@
         "tableRef": "start",
         "placeholder": "Select start date",
         "id": "input2",
-        "validation": ["required", "trim", "unique"],
+        "validation": ["", "trim", ""],
         "url": ""
     }, {
         "name": "Hours worked",
@@ -55,7 +55,7 @@
         "tableRef": "hoursWorked",
         "placeholder": "Enter hours worked",
         "id": "input3",
-        "validation": ["required", "trim", "unique"],
+        "validation": ["", "trim", ""],
         "url": ""
     }],
    "action": [{

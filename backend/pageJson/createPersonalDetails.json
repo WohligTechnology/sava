@@ -15,7 +15,6 @@
         "url": "",
         "dropDownField": "",
         "dropDownType": "single",
-        "onView": true,
         "dropDown": ["Mr","Mrs","Ms"]
     }, {
         "name": "First Name",
