@@ -10,47 +10,47 @@ var navigationservice = angular.module('navigationservice', [])
         {
         name: "Personal Details",
         classis: "active",
-        sref: "#/page/viewPersonalDetails//"
+        sref: "#!/page/viewPersonalDetails//"
     },
     {
         name: "Business",
         classis: "active",
-        sref: "#/page/viewBusiness//"
+        sref: "#!/page/viewBusiness//"
     },
     {
         name: "Branch Registration",
         classis: "active",
-        sref: "#/page/viewBranchRegistration//"
+        sref: "#!/page/viewBranchRegistration//"
     },
     {
         name: "Branch Hours",
         classis: "active",
-        sref: "#/page/viewBranchHours//"
+        sref: "#!/page/viewBranchHours//"
     },
     {
         name: "Employee",
         classis: "active",
-        sref: "#/page/viewEmployee//"
+        sref: "#!/page/viewEmployee//"
     },
     {
         name: "Check In",
         classis: "active",
-        sref: "#/page/viewCheckIn//"
+        sref: "#!/page/viewCheckIn//"
     },
     {
         name: "Loyalty",
         classis: "active",
-        sref: "#/page/viewLoyalty//"
+        sref: "#!/page/viewLoyalty//"
     }, 
     {
         name: "Offer",
         classis: "active",
-        sref: "#/page/viewOffer//"
+        sref: "#!/page/viewOffer//"
     },
     {
         name: "User",
         classis: "active",
-        sref: "#/page/viewAppUser//"
+        sref: "#!/page/viewAppUser//"
     }
 
     // {
@@ -64,7 +64,7 @@ var navigationservice = angular.module('navigationservice', [])
     //         //     name: "View",
     //         //     classis: "active",
     //         //     icon: "user",
-    //         //     link: "#/page/viewConfigTwo//",
+    //         //     link: "#!/page/viewConfigTwo//",
     //         // },
     //
     //         {
@@ -124,7 +124,8 @@ var navigationservice = angular.module('navigationservice', [])
             var data = {
                 accessToken: $.jStorage.get("accessToken")
             };
-            $http.post(adminurl + 'user/profile', data).success(function (data) {
+            $http.post(adminurl + 'user/profile', data).then(function (data) {
+                data=data.data;
                 if (data.value === true) {
                     $.jStorage.set("profile", data.data);
                     callback();
@@ -145,24 +146,34 @@ var navigationservice = angular.module('navigationservice', [])
         },
 
         search: function (url, formData, i, callback) {
-            $http.post(adminurl + url, formData).success(function (data) {
+            $http.post(adminurl + url, formData).then(function (data) {
+                data=data.data;
                 callback(data, i);
             });
         },
         delete: function (url, formData, callback) {
-            $http.post(adminurl + url, formData).success(function (data) {
+            $http.post(adminurl + url, formData).then(function (data) {
+                data=data.data;
                 callback(data);
             });
         },
         countrySave: function (formData, callback) {
-            $http.post(adminurl + 'country/save', formData).success(callback);
+            $http.post(adminurl + 'country/save', formData).then(function(data){
+                data=data.data;
+                callback(data);
+            });
+
         },
 
         apiCall: function (url, formData, callback) {
-            $http.post(adminurl + url, formData).success(callback);
+            $http.post(adminurl + url, formData).then(function(data){
+                data=data.data;
+                callback(data);
+            });
         },
         searchCall: function (url, formData, i, callback) {
-            $http.post(adminurl + url, formData).success(function (data) {
+            $http.post(adminurl + url, formData).then(function (data) {
+                data=data.data;
                 callback(data, i);
             });
         },
@@ -170,14 +181,14 @@ var navigationservice = angular.module('navigationservice', [])
         getOneCountry: function (id, callback) {
             $http.post(adminurl + 'country/getOne', {
                 _id: id
-            }).success(callback);
+            }).then(callback);
         },
         getLatLng: function (address, i, callback) {
             $http({
                 url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyC62zlixVsjaq4zDaL4cefNCubjCgxkte4",
                 method: 'GET',
                 withCredentials: false,
-            }).success(function (data) {
+            }).then(function (data) {
                 callback(data, i);
             });
         }

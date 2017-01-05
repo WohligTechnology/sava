@@ -168,7 +168,8 @@ firstapp.directive('uploadImage', function ($http, $filter) {
                         'Content-Type': undefined
                     },
                     transformRequest: angular.identity
-                }).success(function (data) {
+                }).then(function (data) {
+                    data=data.data;
                     if ($scope.callback) {
                         $scope.callback(data);
                     } else {

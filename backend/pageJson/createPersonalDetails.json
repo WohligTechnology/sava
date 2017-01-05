@@ -82,6 +82,15 @@
         "validation": ["", "trim", ""],
         "url": ""
     },{
+        "name": "County",
+        "type": "text",
+        "tableRef": "county",
+        "placeholder": "Enter County",
+        "id": "email",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },
+    {
         "name": "City",
         "type": "text",
         "tableRef": "city",

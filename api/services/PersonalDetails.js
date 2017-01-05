@@ -22,6 +22,7 @@ var schema = new Schema({
     address1:String,
     address2:String,
     town:String,
+    county:String,
     city:String,
     pincode:Number,
     country:String,
